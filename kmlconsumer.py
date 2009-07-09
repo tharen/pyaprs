@@ -4,7 +4,7 @@
 KML APRS consumer.  Converts a basic packet object for KML presentation.
 """
 
-from consumer import *
+from aprsconsumer import *
 from cgi import escape
 
 class KmlPacket(BasicPacket):
@@ -44,7 +44,7 @@ class KmlPacket(BasicPacket):
 
 class KmlConsumer(Consumer):
     def __init__(self,kmlPath,kmz=False):
-        Consumer.__init__(self)
+        Consumer.__init__(self,'kmlconsumer')
         self.kmlPath=kmlPath
         self.kmz=kmz
         self.header="""<?xml version="1.0" encoding="UTF-8"?>

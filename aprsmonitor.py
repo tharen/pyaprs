@@ -1,14 +1,30 @@
+#!c:/python25/python.exe
+
+"""
+APRS Monitor
+
+Producers connect to various packet source streams.
+    - Producers are expected to provide properly formatted APRS strings.
+        "FROM>PATH,IDENTS:APRS Data Payload"
+
+Consumers accept basic packet objects and further process them
+    - Consumers are expected to receive a BasicPacket instance.
+
+Each producer and consumer must provide a target method that will
+    run in it's own thread.  Packets are exchanged via Queues.
+"""
+
+##TODO: Look into using asyncore instead of threads.
+##TODO: Optional Parallel Python producers & consumers
+
 import os,time,datetime
-import socket,select
 import threading,Queue
 import ConfigParser
 import traceback
 import logging,logging.handlers
 
-from consumer import BasicPacket
+from aprsconsumer import BasicPacket
 from parameters import Parameters
-
-from kmlconsumer import KmlConsumer
 
 ##TODO: put logging in its own module files
 #setup global logging
@@ -21,31 +37,46 @@ my_logger.addHandler(handler)
 debug=my_logger.debug
 info=my_logger.info
 
-class APRSWatch:
+class APRSMonitor:
     def __init__(self,iniFile):
         self.iniFile=iniFile
         self.parameters=Parameters()
         self.socketBuffer=''
-        self.consumers=[]
+        self.consumers={} # {name:consumerInstance,}
+        self.producers={} # {name:producerInstance,}
 
     def addConsumer(self,consumer):
+        """
+        Add a consumer to accept BasicPackets
+        """
         thread=threading.Thread(target=consumer.start)
         thread.start()
-        self.consumers.append(consumer)
+        if self.consumers.has_key(consumer.namer):
+            raise "Consumer names must be unique"
+        self.consumers[consumer.name]=consumer
+
+    def addProducer(self,producer):
+        """
+        Add a producer to accept BasicPackets
+        """
+        thread=threading.Thread(target=producer.start)
+        thread.start()
+        if self.producers.has_key(producer.name):
+            raise "Producer names must be unique"
+        self.producers[producer.name]=producer
 
     def mainLoop(self):
         self.parameters.readInifile(self.iniFile)
-        if self.parameters.log_packets:
-            self.packetLog=open('packets.log','a')
-        self.__openSocket()
         et=time.time()
         while 1:
-            self.__pollData()
+            #self.__pollData()
+            self.__pollProducers()
             if (time.time()-et)>(self.parameters.init_interval):
                 self.parameters.readInifile(self.iniFile)
                 et=time.time()
-            debug('Wait %d seconds' % (self.parameters.poll_interval/1000.0,))
-            #time.sleep(self.parameters.poll_interval/1000.0)
+            debug('Wait %d seconds' % (self.parameters.main.poll_interval/1000.0,))
+            # Wait x number of milliseconds
+            time.sleep(self.parameters.main.poll_interval/1000.0)
 
         #clean up on exit
         try:
@@ -53,79 +84,50 @@ class APRSWatch:
         except:
             print 'Error exiting mainLoop'
 
-    def __pollData(self):
-        try:
-            debug('Polling socket')
-            readReady,writeReady,inError=select.select([self.socket,],[],[],10)
-            if self.socket in readReady:
-                debug('Socket has data')
-                self.__handleData()
-                return True
-            return False
-        except:
-            ##TODO: seperate select exceptions from other errors
-            ##          ie. network failures, disapearing host, etc
-            debug('Select failed, attempt to reopen socket')
-            print traceback.print_exc()
-            self.__openSocket()
-            return None
+    def __pollProducers(self):
+        for name,producer in self.producers.items():
+            try:
+                packet=producer.outQueue.get_nowait()
+                if packet.startswith('error'):
+                    producer.status=3
+                    producer.error=packet
+                else:
+                    producer.status=1
+                    producer.totalPackets+=1
+                    utcTime=datetime.datetime.utcnow()
+                    basicPacket=BasicPacket()
+                    x=basicPacket.fromAPRSIS(packet,utcTime)
+                    if x:
+                        self.__notifyConsumers(basicPacket)
+                        producer.handledPackets+=1
+                    else:
+                        debug('Parse Error: %s' % packet)
+            except:
+                pass
 
-    def __openSocket(self):
-        self.socket=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        self.socketBuffer=''
-        try:
-            self.socket.connect((self.parameters.host,self.parameters.port))
-            if self.parameters.aprsis_login:
-                self.__aprsisLogin()
-            return True
-        except:
-            debug('Error opening socket: (%s,%d)' %
-                    (self.parameters.host,self.parameters.port))
-            return False
+    def __notifyConsumers(self,packet):
+        for name,consumer in self.consumers.items():
+            ##TODO: is copy necessary
+            #pass the BasicPacket to each consumer
+            #(status,packet)
+            consumer.queueId.put(('ok',copy(packet)))
 
-    def __aprsisLogin(self):
-        ##TODO: robustify
-        ##TODO: do recv non-blocking
-        p=self.parameters
-        connStr='user %s pass %s vers aprs2kml %s\r\n' % \
-                (p.username,p.password,p.filter)
-        data=self.socket.recv(100)
-        self.socket.send(connStr)
-        self.socketBuffer=self.socket.recv(100)
-        debug('Login successful')
-
-    def __handleData(self):
-        self.socketBuffer += self.socket.recv(100)
-        utcTime=datetime.datetime.utcnow()
-        if self.socketBuffer.endswith('\n'):
-            lines=self.socketBuffer.split('\n')
-            self.socketBuffer=''
-        else:
-            lines=self.socketBuffer.split('\n')
-            debug('Buffering: %s' % lines[-1])
-            self.socketBuffer=lines.pop(-1)
-
-        for line in lines:
-            debug('Packet: %s' % (line.strip(),))
-            packet=BasicPacket()
-            ok = packet.fromAPRSIS(line,utcTime)
-            if not ok:
-                #print '***  Null Packet ***'
-                continue
-            if self.parameters.log_packets:
-                self.__logPacket(line)
-            for consumer in self.consumers:
-                consumer.queueIn.put(('ok',packet))
 
     def __logPacket(self,packet):
         self.packetLog.write(packet.strip()+'\n')
         self.packetLog.flush()
 
 if __name__=='__main__':
-    ini='aprs2kml.ini'
+    from inetproducer import InetProducer
+    from kmlconsumer import KmlConsumer
 
-    kmlConsumer=KmlConsumer('aprs.kml')
+    ini='aprsmonitor.ini'
 
-    aprs=APRSWatch(ini)
+    kmlConsumer=KmlConsumer('output/aprs.kml')
+    inetProducer=InetProducer('aprsis_1')
+
+    aprs=APRSMonitor(ini)
     aprs.addConsumer(kmlConsumer)
+    aprs.addProducer(inetProducer)
+
     aprs.mainLoop()

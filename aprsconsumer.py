@@ -12,11 +12,17 @@ debug=my_logger.debug
 info=my_logger.info
 
 class Consumer:
-    def __init__(self,*args,**kwargs):
+    def __init__(self,name,*args,**kwargs):
+        self.name=name
+        self.status=0 #0=init, 1=ready, -1=error
         self.queueIn=Queue.Queue()
 
     def start(self):
+        """
+        Main loop to handle BasicPackets placed in the queue
+        """
         while 1:
+            #block while waiting for data to handle
             flag,basicPacket=self.queueIn.get()
             if flag=='stop':
                 break
@@ -59,10 +65,11 @@ class BasicPacket(object):
         local=self.utcTime-td
         return local.strftime(format)
 
+##TODO: put parser in a seperate module
 class Payload(object):
     def __init__(self):
         """
-        parse a packet data string
+        Simple parser for APRS packet data payloads
         """
         self.data=''
         self.lat=0.0
@@ -98,6 +105,28 @@ class Payload(object):
             return False
 
         return True
+
+class Producer:
+    def __init__(self,name):
+        """
+        Producer super class
+        """
+        self.name=name
+        self.status=0 #0-init, 1-running, 3-error
+        self.errorMessage=''
+        self.queueOut=Queue.Queue()
+
+    def start(self):
+        """
+        Start producing packets.  This would most likely be a loop
+        of some sort to respond to a data stream, query interval, etc.
+
+        ** This should be overwritten
+        """
+        while 1:
+            data='Error: Super Class instance'
+            self.queueOut.put(data)
+            time.sleep(0.5)
 
 if __name__=='__main__':
     p='!3858.21N/09007.02W#PHG3430/W3,Godfrey IL kb9bpf@arrl.net TNX K9SD\r\n'
