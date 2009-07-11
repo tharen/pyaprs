@@ -4,7 +4,9 @@ APRS producer superclass and associated objects
 """
 import Queue,datetime
 import socket,select
+
 import logging
+from parameters import Parameters
 
 # Reference the global logger
 my_logger = logging.getLogger('MyLogger')
@@ -12,14 +14,18 @@ debug=my_logger.debug
 info=my_logger.info
 
 class Producer:
-    def __init__(self,name):
+    def __init__(self,iniFile,name):
         """
         Producer super class
         """
+        self.iniFile=iniFile
         self.name=name
         self.status=0 #0-init, 1-running, 3-error
         self.errorMessage=''
         self.queueOut=Queue.Queue()
+        self.parameters=Parameters(self.iniFile,self.name)
+        self.handledPackets=0
+        self.totalPackets=0
 
     def start(self):
         """
@@ -28,6 +34,7 @@ class Producer:
 
         ** This should be overwritten
         """
+        debug('Producer Starting: %s' % self.name)
         while 1:
             data='Error: Super Class instance'
             self.queueOut.put(data)

@@ -1,0 +1,13 @@
+    <Placemark>
+      <name>%(station)s</name>
+      <description><![CDATA[Station: <b>%(station)s</b>
+          <br>Time: %(localTime)s
+          <br>Path: %(path)s
+          <br>Data: %(data)s
+          <br>Packet: <br>%(aprsisString)s
+          ]]>
+      </description>
+      <Point>
+        <coordinates>%(longitude).4f,%(latitude).4f,%(elev)d</coordinates>
+      </Point>
+    </Placemark>

@@ -19,29 +19,24 @@ Each producer and consumer must provide a target method that will
 
 import os,time,datetime
 import threading,Queue
-import ConfigParser
-import traceback
-import logging,logging.handlers
+import logging
 
-from aprsconsumer import BasicPacket
+from copy import copy
+
+from aprsconsumer import Consumer
 from parameters import Parameters
+from aprspacket import BasicPacket
 
-##TODO: put logging in its own module files
-#setup global logging
-LOG_FILENAME='aprs2kml.log'
+# Reference the global logger
 my_logger = logging.getLogger('MyLogger')
-my_logger.setLevel(logging.INFO)
-handler = logging.handlers.RotatingFileHandler(
-              LOG_FILENAME, maxBytes=500*1024, backupCount=5)
-my_logger.addHandler(handler)
 debug=my_logger.debug
 info=my_logger.info
 
 class APRSMonitor:
     def __init__(self,iniFile):
         self.iniFile=iniFile
-        self.parameters=Parameters()
-        self.socketBuffer=''
+        self.parameters=Parameters(self.iniFile,'main')
+        self.packetBuffer=[]
         self.consumers={} # {name:consumerInstance,}
         self.producers={} # {name:producerInstance,}
 
@@ -51,7 +46,7 @@ class APRSMonitor:
         """
         thread=threading.Thread(target=consumer.start)
         thread.start()
-        if self.consumers.has_key(consumer.namer):
+        if self.consumers.has_key(consumer.name):
             raise "Consumer names must be unique"
         self.consumers[consumer.name]=consumer
 
@@ -66,68 +61,67 @@ class APRSMonitor:
         self.producers[producer.name]=producer
 
     def mainLoop(self):
-        self.parameters.readInifile(self.iniFile)
         et=time.time()
         while 1:
-            #self.__pollData()
+            # all producers with data ready put packets in the packet buffer
             self.__pollProducers()
-            if (time.time()-et)>(self.parameters.init_interval):
-                self.parameters.readInifile(self.iniFile)
+
+            # if there are packets to consume, consume them all
+            if self.packetBuffer: debug('%d Packets to Parse' % len(self.packetBuffer))
+            while self.packetBuffer:
+                ##TODO: error trap
+                self.__notifyConsumers(self.packetBuffer.pop(0))
+
+            init_interval=float(self.parameters.get('init_interval'))
+            poll_interval=float(self.parameters.get('poll_interval'))
+
+            # reload the parameter file occasionally
+            if (time.time()-et)>(init_interval):
+                self.parameters=Parameters(self.iniFile,'main')
                 et=time.time()
-            debug('Wait %d seconds' % (self.parameters.main.poll_interval/1000.0,))
+
             # Wait x number of milliseconds
-            time.sleep(self.parameters.main.poll_interval/1000.0)
+            time.sleep(poll_interval/1000.0)
 
         #clean up on exit
         try:
             self.packetLog.close()
         except:
-            print 'Error exiting mainLoop'
+            exception('Error exiting mainLoop')
 
     def __pollProducers(self):
         for name,producer in self.producers.items():
             try:
-                packet=producer.outQueue.get_nowait()
-                if packet.startswith('error'):
-                    producer.status=3
-                    producer.error=packet
-                else:
-                    producer.status=1
-                    producer.totalPackets+=1
-                    utcTime=datetime.datetime.utcnow()
-                    basicPacket=BasicPacket()
-                    x=basicPacket.fromAPRSIS(packet,utcTime)
-                    if x:
-                        self.__notifyConsumers(basicPacket)
-                        producer.handledPackets+=1
-                    else:
-                        debug('Parse Error: %s' % packet)
+                #get the next packet from each producer
+                #get_nowait raises an error if not data ready
+                ok,packet=producer.queueOut.get_nowait()
             except:
-                pass
+                #no data to process
+                continue
+
+            if ok=='error':
+                producer.status=3
+                producer.error=packet
+            else:
+                #producers only produce complete packets
+                #  but, there is not real verification
+                producer.status=1
+                producer.totalPackets+=1
+                utcTime=datetime.datetime.utcnow()
+                #add the packet to the buffer
+                self.packetBuffer.append(packet)
+                producer.handledPackets+=1
 
     def __notifyConsumers(self,packet):
         for name,consumer in self.consumers.items():
             ##TODO: is copy necessary
             #pass the BasicPacket to each consumer
             #(status,packet)
-            consumer.queueId.put(('ok',copy(packet)))
-
+            consumer.queueIn.put(('ok',copy(packet)))
 
     def __logPacket(self,packet):
         self.packetLog.write(packet.strip()+'\n')
         self.packetLog.flush()
 
 if __name__=='__main__':
-    from inetproducer import InetProducer
-    from kmlconsumer import KmlConsumer
-
-    ini='aprsmonitor.ini'
-
-    kmlConsumer=KmlConsumer('output/aprs.kml')
-    inetProducer=InetProducer('aprsis_1')
-
-    aprs=APRSMonitor(ini)
-    aprs.addConsumer(kmlConsumer)
-    aprs.addProducer(inetProducer)
-
-    aprs.mainLoop()
+    pass

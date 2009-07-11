@@ -1,26 +1,26 @@
 #inetproducer.py
 
-import Queue,datetime
+import Queue,datetime,time
 import socket,select
 import logging
 
-from parameters import Parameters
 from aprsproducer import Producer
+from aprspacket import BasicPacket
 
 # Reference the global logger
 my_logger = logging.getLogger('MyLogger')
 debug=my_logger.debug
 info=my_logger.info
+exception=my_logger.exception
 
 class InetProducer(Producer):
-    def __init__(self,name,timeout=10,throttle=0.1):
-        Producer.__init__(self,name)
+    def __init__(self,iniFile,name,timeout=10,throttle=0.1):
+        Producer.__init__(self,iniFile,name)
         self.timeout=timeout #seconds to wait for a response from the socket
         self.throttle=throttle #seconds to pause between socket reads
         self.socket=None
         self.socketBuffer=''
-        print Parameters()
-        p=self.parameters=Parameters().__getattribute__(name)  #parameters are in a section titled [self.name]
+        #self.parameters.__getattribute__(name)  #parameters are in a section titled [self.name]
 
     def start(self):
         self.__openSocket()
@@ -34,8 +34,7 @@ class InetProducer(Producer):
             except:
                 ##TODO: seperate select exceptions from other errors
                 ##          ie. network failures, disapearing host, etc
-                debug('Select failed, attempt to reopen socket')
-                print traceback.print_exc()
+                exception('Select failed, attempt to reopen socket')
                 self.__openSocket()
 
             time.sleep(self.throttle)
@@ -43,22 +42,27 @@ class InetProducer(Producer):
     def __openSocket(self):
         self.socket=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         self.socketBuffer=''
-        try:
-            self.socket.connect((self.parameters.host,self.parameters.port))
-            if self.parameters.aprsis_login:
-                self.__aprsisLogin()
-            return True
-        except:
-            debug('Error opening socket: (%s,%d)' %
-                    (self.parameters.host,self.parameters.port))
-            return False
+        host=self.parameters.get('host')
+        port=int(self.parameters.get('port'))
+        debug('Open Socket (%s:%d)' % (host,port))
+##        try:
+        self.socket.connect((host,port))
+        if bool(int(self.parameters.get('aprsis_login'))):
+            self.__aprsisLogin()
+        return True
+##        except:
+##            debug('Error opening socket: (%s,%d)' %
+##                    (host,port))
+##            return False
 
     def __aprsisLogin(self):
         ##TODO: robustify
         ##TODO: do recv non-blocking
-        p=self.parameters
+        username=self.parameters.get('username')
+        password=self.parameters.get('password')
+        filter=self.parameters.get('filter')
         connStr='user %s pass %s vers aprs2kml %s\r\n' % \
-                (p.username,p.password,p.filter)
+                (username,password,filter)
         data=self.socket.recv(100)
         self.socket.send(connStr)
         self.socketBuffer=self.socket.recv(100)
@@ -76,12 +80,12 @@ class InetProducer(Producer):
             self.socketBuffer=lines.pop(-1)
 
         for line in lines:
-            debug('Packet: %s' % (line.strip(),))
+            #debug('Packet: %s' % (line.strip(),))
             packet=BasicPacket()
             ok = packet.fromAPRSIS(line,utcTime)
-            if not ok:
-                #print '***  Null Packet ***'
+            if ok!=True:
+                #print ok,'***  Null Packet ***'
                 continue
-
             #if all looks good, post the packet to the output queue
-            consumer.queueOut.put(('ok',packet))
+            #debug('Post packet to queueOut')
+            self.queueOut.put(('ok',packet))
