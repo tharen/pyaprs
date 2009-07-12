@@ -1,13 +1,15 @@
     <Placemark>
       <name>%(station)s</name>
+      <styleUrl>C:/proj/pyAPRS/resources/aprsstyles.kml#aprs_table1_symbol1</styleUrl>
       <description><![CDATA[Station: <b>%(station)s</b>
           <br>Time: %(localTime)s
           <br>Path: %(path)s
           <br>Data: %(data)s
-          <br>Packet: <br>%(aprsisString)s
+          <p style="margin-left:.5in;text-indent:-.5in">Packet: %(aprsisString)s
+          <br>
           ]]>
       </description>
       <Point>
-        <coordinates>%(longitude).4f,%(latitude).4f,%(elev)d</coordinates>
+        <coordinates>%(longitude).4f,%(latitude).4f,%(elevation)d</coordinates>
       </Point>
     </Placemark>

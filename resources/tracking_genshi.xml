@@ -6,22 +6,25 @@
     <Folder py:for="station in stations">
       <name>${station.name}</name>
       <Placmark>
-        <id>${strike.id}</id>
-        <styleUrl>${strike.style}</styleUrl>
+        <id>${station.id}</id>
+        <styleUrl>${station.style}</styleUrl>
         <name>Last Position</name>
         <description>
         </description>
         <Point>
-          <coordinates>${strike.longitude},${strike.latitude},${strike.elevation}</coordinates>
+          <coordinates>${station.longitude},${station.latitude},${station.elevation}</coordinates>
         </Point>
       </Placemark>
       </Placemark>
         <name>Track</name>
-        <Linestring py:for="point in strik.tracks">
-          <Point>
-            <coordinates>${point.longitude},${point.latitude},${point.elevation}</coordinates>
-          </Point>
-        </Linestring>
+        <styleUrl>${station.style}</styleUrl>
+        <LineString>
+          <extrude>1</extrude>
+          <tessellate>1</tessellate>
+          <coordinatespy:for="point in station.tracks">
+            ${point.longitude},${point.latitude},${point.elevation}
+          </coordinates>
+        </LineString>
     </Folder>
   </Folder>
 </Document>

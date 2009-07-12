@@ -4,9 +4,14 @@
 	<name>APRS To KML</name>
 	<open>1</open>
 	<Link>
-		<href>aprs.kml</href>
+		<href>../output/aprs.kml</href>
 		<refreshMode>onInterval</refreshMode>
-		<refreshInterval>10</refreshInterval>
+		<refreshInterval>30</refreshInterval>
+	</Link>
+  <Link>
+		<href>../output/aprs.kml</href>
+		<refreshMode>onInterval</refreshMode>
+		<refreshInterval>30</refreshInterval>
 	</Link>
 </NetworkLink>
 </kml>

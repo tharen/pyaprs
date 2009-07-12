@@ -35,12 +35,18 @@ class InetProducer(Producer):
                 ##TODO: seperate select exceptions from other errors
                 ##          ie. network failures, disapearing host, etc
                 exception('Select failed, attempt to reopen socket')
+                time.sleep(0.2)
                 self.__openSocket()
 
-            time.sleep(self.throttle)
+            time.sleep(self.pollInterval)
 
     def __openSocket(self):
-        self.socket=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+        self.socket=socket.socket(
+                family=socket.AF_INET
+                ,type=socket.SOCK_STREAM
+                #,proto=0
+                )
+        #self.socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
         self.socketBuffer=''
         host=self.parameters.get('host')
         port=int(self.parameters.get('port'))
@@ -58,31 +64,46 @@ class InetProducer(Producer):
     def __aprsisLogin(self):
         ##TODO: robustify
         ##TODO: do recv non-blocking
+        self.socketBuffer=''
         username=self.parameters.get('username')
         password=self.parameters.get('password')
-        filter=self.parameters.get('filter')
-        connStr='user %s pass %s vers aprs2kml %s\r\n' % \
-                (username,password,filter)
-        data=self.socket.recv(100)
+        adjunct=self.parameters.get('adjunct')
+        connStr='user %s pass %s vers pyaprs 0.0 %s\r\n' % \
+                (username,password,adjunct)
+        debug('APRSIS Login: %s' % self.socket.recv(200))
+        debug('Sending: %s' % connStr)
         self.socket.send(connStr)
-        self.socketBuffer=self.socket.recv(100)
-        debug('Login successful')
+        d=self.socket.recv(200)
+        debug('Response: %s' % d)
+
+        if d.startswith('# logresp %s verified' % username):
+            debug('Login Successful')
+        else:
+            debug('***********Login Failed***********')
 
     def __handleData(self):
-        self.socketBuffer += self.socket.recv(100)
+        data=self.socket.recv(200)
+        self.socketBuffer += data
         utcTime=datetime.datetime.utcnow()
-        if self.socketBuffer.endswith('\n'):
-            lines=self.socketBuffer.split('\n')
+        #lines=self.socketBuffer.split('\r\n')
+        if self.socketBuffer.endswith('\r\n'):
+            #buffer ends on a aprsis new line
+            lines=self.socketBuffer.strip().split('\r\n')
             self.socketBuffer=''
         else:
-            lines=self.socketBuffer.split('\n')
+            #buffer is not terminated by newline
+            lines=self.socketBuffer.strip().split('\r\n')
             debug('Buffering: %s' % lines[-1])
-            self.socketBuffer=lines.pop(-1)
+            self.socketBuffer='%s' % lines.pop(-1)
 
         for line in lines:
             #debug('Packet: %s' % (line.strip(),))
+            if len(line.strip())==0:
+                debug('Data: %s' % data)
+                debug('Split: %s' % lines)
+                #raise
             packet=BasicPacket()
-            ok = packet.fromAPRSIS(line,utcTime)
+            ok = packet.fromAPRSIS(line.strip(),utcTime)
             if ok!=True:
                 #print ok,'***  Null Packet ***'
                 continue

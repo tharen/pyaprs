@@ -4,6 +4,8 @@
 KML APRS consumer.  Converts a basic packet object for KML presentation.
 """
 
+import datetime
+
 from aprsconsumer import Consumer
 from aprspacket import BasicPacket
 
@@ -29,13 +31,27 @@ class KmlPacket(BasicPacket):
         d.update(self.payload.__dict__)
         #d['data']=escape(d['data'])
         ##TODO: esc characters are breaking kml cdata???
-        d['data']=d['data'].replace(chr(27),' ')
-        d['aprsisString']=d['aprsisString'].replace(chr(27),' ')
+##        cd=''
+##        for c in d['data']:
+##            if ord(c) in (27,):
+##                cd+=' '
+##            else: cd+=c
+##        d['data']=cd
+##
+##        cd=''
+##        for c in d['aprsisString']:
+##            if ord(c) in (27,):
+##                cd+=' '
+##            else: cd+=c
+##        d['aprsisString']=cd
+
+        d['data']=''
+        d['aprsisString']=''
         d['localTime']=self.localTime()
         return template % d
 
-    def __str__(self):
-        return self.asPlacemark()
+##    def __str__(self):
+##        return self.asPlacemark()
 
 class KmlConsumer(Consumer):
     def __init__(self,iniFile,name):
@@ -47,16 +63,17 @@ class KmlConsumer(Consumer):
         self.headerFile=self.parameters.get('kmlheader')
         self.tailFile=self.parameters.get('kmltail')
         self.placemarkFile=self.parameters.get('kmlplacemark')
+        self.packets=[]
 
     def __initKML(self):
         self.header=open(self.headerFile).read()
-        self.header=open(self.tailFile).read()
+        self.tail=open(self.tailFile).read()
         self.kmlFile=open(self.kmlPath,'wb+')
         self.kmlFile.write(self.header)
         self.kmlFile.write(self.tail)
 
     def consume(self,srcPacket):
-        debug('KML Consuming: %s' % srcPacket)
+        #debug('KML Consuming: %s' % srcPacket)
         kmlPacket=KmlPacket(srcPacket)
         self.header=open(self.headerFile).read()
         self.tail=open(self.tailFile).read()
@@ -75,4 +92,30 @@ class KmlConsumer(Consumer):
             self.kmlFile.write(self.tail)
             self.kmlFile.flush()
 
+        self.packets.append(kmlPacket)
+
         return True
+
+    def refresh(self):
+        debug('KML refresh')
+        try:self.kmlFile.close()
+        except:
+            debug('Unable to close kml file')
+            pass
+        self.__initKML()
+        #copy and reset the current set of packets
+        packets=self.packets[:]
+        self.packets=[]
+        keepAge=float(self.parameters.get('keep_age'))
+        now=datetime.datetime.utcnow()
+        c=0
+        for i in range(len(packets)-1):
+            packet=packets[i]
+            td=now-packet.utcTime
+            age=td.days*24*60*60 + td.seconds
+            if age<=keepAge:
+                #re-consume the packet
+                self.consume(packet)
+                c+=1
+
+        info('%d Position Reports' % c)

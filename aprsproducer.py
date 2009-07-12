@@ -24,6 +24,7 @@ class Producer:
         self.errorMessage=''
         self.queueOut=Queue.Queue()
         self.parameters=Parameters(self.iniFile,self.name)
+        self.pollInterval=float(self.parameters.get('poll_interval'))
         self.handledPackets=0
         self.totalPackets=0
 
@@ -38,4 +39,4 @@ class Producer:
         while 1:
             data='Error: Super Class instance'
             self.queueOut.put(data)
-            time.sleep(0.5)
+            time.sleep(self.pollInterval)

@@ -2,7 +2,7 @@
 """
 APRS consumer superclass and associated objects
 """
-import Queue,datetime,re
+import Queue,datetime,time,re
 
 import logging
 
@@ -12,6 +12,7 @@ from parameters import Parameters
 my_logger = logging.getLogger('MyLogger')
 debug=my_logger.debug
 info=my_logger.info
+exception=my_logger.exception
 
 class Consumer:
     def __init__(self,iniFile,name,*args,**kwargs):
@@ -20,6 +21,8 @@ class Consumer:
         self.status=0 #0=init, 1=ready, -1=error
         self.queueIn=Queue.Queue()
         self.parameters=Parameters(self.iniFile,self.name)
+        self.pollInterval=float(self.parameters.get('poll_interval'))
+        self.refreshInterval=float(self.parameters.get('refresh_interval'))
         self.handledPackets=0
         self.totalPackets=0
 
@@ -27,10 +30,26 @@ class Consumer:
         """
         Main loop to handle BasicPackets placed in the queue
         """
+        time.clock()
         debug('Consumer Starting: %s' % self.name)
+        rt=time.clock()-self.refreshInterval
         while 1:
-            #block while waiting for data to handle
-            flag,basicPacket=self.queueIn.get()
+            # is it time to refresh
+            if time.clock()-rt>self.refreshInterval:
+                debug('%s - Refresh Time' % self.name)
+                self.refresh()
+                rt=time.clock()
+
+            # check the queue for incoming packets
+            try:
+                flag,basicPacket=self.queueIn.get_nowait()
+            except Queue.Empty:
+                time.sleep(self.pollInterval)
+                continue
+            except:
+                exception('Consumer queue Error')
+
+
             if flag=='stop':
                 break
             self.consume(basicPacket)
@@ -39,32 +58,35 @@ class Consumer:
         """
         Do something with packet data
         """
-        x=basicPacket
+        pass
 
-class Producer:
-    def __init__(self,iniFile,name):
+    def refresh(self):
         """
-        Producer super class
+        Do something on a time schedule
         """
-        self.iniFile=iniFile
-        self.name=name
-        self.status=0 #0-init, 1-running, 3-error
-        self.errorMessage=''
-        self.queueOut=Queue.Queue()
-        self.parameters=Parameters(self.iniFile)
+        pass
 
-    def start(self):
-        """
-        Start producing packets.  This would most likely be a loop
-        of some sort to respond to a data stream, query interval, etc.
+##class Producer:
+##    def __init__(self,iniFile,name):
+##        """
+##        Producer super class
+##        """
+##        self.iniFile=iniFile
+##        self.name=name
+##        self.status=0 #0-init, 1-running, 3-error
+##        self.errorMessage=''
+##        self.queueOut=Queue.Queue()
+##        self.parameters=Parameters(self.iniFile)
+##
+##    def start(self):
+##        """
+##        Start producing packets.  This would most likely be a loop
+##        of some sort to respond to a data stream, query interval, etc.
+##
+##        ** This should be overwritten
+##        """
+##        while 1:
+##            data='Error: Super Class instance'
+##            self.queueOut.put(data)
+##            time.sleep(0.5)
 
-        ** This should be overwritten
-        """
-        while 1:
-            data='Error: Super Class instance'
-            self.queueOut.put(data)
-            time.sleep(0.5)
-
-if __name__=='__main__':
-    p='!3858.21N/09007.02W#PHG3430/W3,Godfrey IL kb9bpf@arrl.net TNX K9SD\r\n'
-    payload=Payload(p)

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+    <!--  Primary Table Symbol 1 -->
+    <StyleMap id="aprs_table1_symbol1">
+  		<Pair>
+  			<key>normal</key>
+  			<styleUrl>#sn_placemark_circle</styleUrl>
+  		</Pair>
+  		<Pair>
+  			<key>highlight</key>
+  			<styleUrl>#sh_placemark_circle_highlight</styleUrl>
+  		</Pair>
+  	</StyleMap>
+    
+  	<Style id="sn_placemark_circle">
+  		<IconStyle>
+  			<color>ff0055ff</color>
+        <scale>0.8</scale>
+  			<Icon>
+  				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png</href>
+  			</Icon>
+  		</IconStyle>
+  		<ListStyle>
+  		</ListStyle>
+  	</Style>
+  	<Style id="sh_placemark_circle_highlight">
+  		<IconStyle>
+  			<color>ff0055ff</color>
+  			<scale>1.2</scale>
+  			<Icon>
+  				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_circle_highlight.png</href>
+  			</Icon>
+  		</IconStyle>
+  		<ListStyle>
+  		</ListStyle>
+  	</Style>
+  </Document>
+</kml>
