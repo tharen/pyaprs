@@ -15,14 +15,15 @@ info=my_logger.info
 exception=my_logger.exception
 
 class Consumer:
-    def __init__(self,iniFile,name,*args,**kwargs):
-        self.iniFile=iniFile
+    def __init__(self,parameters,name,*args,**kwargs):
+        #self.iniFile=iniFile
+        self.parameters=parameters
         self.name=name
         self.status=0 #0=init, 1=ready, -1=error
         self.queueIn=Queue.Queue()
-        self.parameters=Parameters(self.iniFile,self.name)
-        self.pollInterval=float(self.parameters.get('poll_interval'))
-        self.refreshInterval=float(self.parameters.get('refresh_interval'))
+        #self.parameters=Parameters(self.iniFile,self.name)
+        self.pollInterval=float(self.parameters.poll_interval)
+        self.refreshInterval=float(self.parameters.refresh_interval)
         self.handledPackets=0
         self.totalPackets=0
 

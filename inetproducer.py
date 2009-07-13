@@ -13,9 +13,9 @@ debug=my_logger.debug
 info=my_logger.info
 exception=my_logger.exception
 
-class InetProducer(Producer):
-    def __init__(self,iniFile,name,timeout=10,throttle=0.1):
-        Producer.__init__(self,iniFile,name)
+class Main(Producer):
+    def __init__(self,parameters,name,timeout=10,throttle=0.1):
+        Producer.__init__(self,parameters,name)
         self.timeout=timeout #seconds to wait for a response from the socket
         self.throttle=throttle #seconds to pause between socket reads
         self.socket=None
@@ -48,12 +48,12 @@ class InetProducer(Producer):
                 )
         #self.socket.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
         self.socketBuffer=''
-        host=self.parameters.get('host')
-        port=int(self.parameters.get('port'))
+        host=self.parameters.host
+        port=int(self.parameters.port)
         debug('Open Socket (%s:%d)' % (host,port))
 ##        try:
         self.socket.connect((host,port))
-        if bool(int(self.parameters.get('aprsis_login'))):
+        if bool(int(self.parameters.aprsis_login)):
             self.__aprsisLogin()
         return True
 ##        except:
@@ -65,9 +65,9 @@ class InetProducer(Producer):
         ##TODO: robustify
         ##TODO: do recv non-blocking
         self.socketBuffer=''
-        username=self.parameters.get('username')
-        password=self.parameters.get('password')
-        adjunct=self.parameters.get('adjunct')
+        username=self.parameters.username
+        password=self.parameters.password
+        adjunct=self.parameters.adjunct
         connStr='user %s pass %s vers pyaprs 0.0 %s\r\n' % \
                 (username,password,adjunct)
         debug('APRSIS Login: %s' % self.socket.recv(200))

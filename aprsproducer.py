@@ -14,17 +14,18 @@ debug=my_logger.debug
 info=my_logger.info
 
 class Producer:
-    def __init__(self,iniFile,name):
+    def __init__(self,parameters,name):
         """
         Producer super class
         """
-        self.iniFile=iniFile
+        #self.iniFile=iniFile
+        self.parameters=parameters
         self.name=name
         self.status=0 #0-init, 1-running, 3-error
         self.errorMessage=''
         self.queueOut=Queue.Queue()
-        self.parameters=Parameters(self.iniFile,self.name)
-        self.pollInterval=float(self.parameters.get('poll_interval'))
+        #self.parameters=Parameters(self.iniFile,self.name)
+        self.pollInterval=float(self.parameters.poll_interval)
         self.handledPackets=0
         self.totalPackets=0
 

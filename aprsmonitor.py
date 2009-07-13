@@ -32,10 +32,12 @@ my_logger = logging.getLogger('MyLogger')
 debug=my_logger.debug
 info=my_logger.info
 
-class APRSMonitor:
-    def __init__(self,iniFile):
-        self.iniFile=iniFile
-        self.parameters=Parameters(self.iniFile,'main')
+class Main:
+    def __init__(self,parameters,name):
+        #self.iniFile=iniFile
+        #self.parameters=Parameters(self.iniFile,'main')
+        self.parameters=parameters
+        self.name=name
         self.packetBuffer=[]
         self.consumers={} # {name:consumerInstance,}
         self.producers={} # {name:producerInstance,}
@@ -44,8 +46,6 @@ class APRSMonitor:
         """
         Add a consumer to accept BasicPackets
         """
-        thread=threading.Thread(target=consumer.start)
-        thread.start()
         if self.consumers.has_key(consumer.name):
             raise "Consumer names must be unique"
         self.consumers[consumer.name]=consumer
@@ -54,13 +54,20 @@ class APRSMonitor:
         """
         Add a producer to accept BasicPackets
         """
-        thread=threading.Thread(target=producer.start)
-        thread.start()
+##        thread=threading.Thread(target=producer.start)
+##        thread.start()
         if self.producers.has_key(producer.name):
             raise "Producer names must be unique"
         self.producers[producer.name]=producer
 
     def mainLoop(self):
+        for name,consumer in self.consumers.items():
+            thread=threading.Thread(target=consumer.start)
+            thread.start()
+        for name,producer in self.producers.items():
+            thread=threading.Thread(target=producer.start)
+            thread.start()
+
         et=time.time()
         while 1:
             # all producers with data ready put packets in the packet buffer
@@ -72,8 +79,8 @@ class APRSMonitor:
                 ##TODO: error trap
                 self.__notifyConsumers(self.packetBuffer.pop(0))
 
-            init_interval=float(self.parameters.get('init_interval'))
-            poll_interval=float(self.parameters.get('poll_interval'))
+            init_interval=float(self.parameters.init_interval)
+            poll_interval=float(self.parameters.poll_interval)
 
             # reload the parameter file occasionally
             if (time.time()-et)>(init_interval):

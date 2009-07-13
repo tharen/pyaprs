@@ -10,6 +10,8 @@ from aprsconsumer import Consumer
 from aprspacket import BasicPacket
 
 #from cgi import escape
+#from xml.sax.saxutils import escape
+#from xmlrpclib import Binary as encode
 
 import logging
 logger = logging.getLogger('MyLogger')
@@ -45,24 +47,76 @@ class KmlPacket(BasicPacket):
 ##            else: cd+=c
 ##        d['aprsisString']=cd
 
-        d['data']=''
-        d['aprsisString']=''
+        d['data']=self.encode(d['data'])
+        d['aprsisString']=self.encode(d['aprsisString'])
         d['localTime']=self.localTime()
+
         return template % d
+
+
+    def encode(self,str):
+        new=[]
+        for ch in str:
+            #print ch,ord(ch)
+            ##TODO: fix me
+            if ((ch == 0x9) | (ch == 0xA) | (ch == 0xD) | ((ch >= 0x20) & (ch <= 0xD7FF)) | ((ch >= 0xE000) & (ch <= 0xFFFD)) | ((ch >= 0x10000) & (ch <= 0x10FFFF))):
+                new.append(ch)
+            else:
+                new.append(' ')
+        return ''.join(new)
+
+    def xencode(self,str):
+        new=[]
+        for c in unicode(str,"utf-8"):
+            try:
+                new.append(c.encode("cp1252"))
+            except:
+                raise
+                new.append(c.encode("iso-8859-15"))
+        return ''.join(new)
+
+##    #---encode for xml
+##    ## http://code.activestate.com/recipes/303668/
+##    def encode_for_xml(self,unicode_data, encoding='utf-8'):
+##        """
+##        Encode unicode_data for use as XML or HTML, with characters outside
+##        of the encoding converted to XML numeric character references.
+##        """
+##        try:
+##            return unicode_data.encode(encoding, 'xmlcharrefreplace')
+##        except ValueError:
+##            raise
+##            # ValueError is raised if there are unencodable chars in the
+##            # data and the 'xmlcharrefreplace' error handler is not found.
+##            # Pre-2.3 Python doesn't support the 'xmlcharrefreplace' error
+##            # handler, so we'll emulate it.
+##            return self._xmlcharref_encode(unicode_data, encoding)
+##
+##    def _xmlcharref_encode(self,unicode_data, encoding):
+##        """Emulate Python 2.3's 'xmlcharrefreplace' encoding error handler."""
+##        chars = []
+##        # Step through the unicode_data string one character at a time in
+##        # order to catch unencodable characters:
+##        for char in unicode_data:
+##            try:
+##                chars.append(char.encode(encoding, 'strict'))
+##            except UnicodeError:
+##                chars.append('&#%i;' % ord(char))
+##        return ''.join(chars)
 
 ##    def __str__(self):
 ##        return self.asPlacemark()
 
-class KmlConsumer(Consumer):
-    def __init__(self,iniFile,name):
-        Consumer.__init__(self,iniFile,name)
-        self.kmlPath=self.parameters.get('outpath')
-        self.kmz=bool(int(self.parameters.get('kmz')))
+class Main(Consumer):
+    def __init__(self,parameters,name):
+        Consumer.__init__(self,parameters,name)
+        self.kmlPath=self.parameters.outpath
+        self.kmz=bool(int(self.parameters.kmz))
         self.kmlFile=None
         ##TODO: move header and tail to a file or two
-        self.headerFile=self.parameters.get('kmlheader')
-        self.tailFile=self.parameters.get('kmltail')
-        self.placemarkFile=self.parameters.get('kmlplacemark')
+        self.headerFile=self.parameters.kmlheader
+        self.tailFile=self.parameters.kmltail
+        self.placemarkFile=self.parameters.kmlplacemark
         self.packets=[]
 
     def __initKML(self):
@@ -75,7 +129,6 @@ class KmlConsumer(Consumer):
     def consume(self,srcPacket):
         #debug('KML Consuming: %s' % srcPacket)
         kmlPacket=KmlPacket(srcPacket)
-        self.header=open(self.headerFile).read()
         self.tail=open(self.tailFile).read()
         self.placemark=open(self.placemarkFile).read()
         placemark=kmlPacket.asPlacemark(self.placemark)
@@ -87,6 +140,7 @@ class KmlConsumer(Consumer):
             self.kmlFile.flush()
         except:
             self.__initKML()
+            #self.header=open(self.headerFile).read()
             self.kmlFile.seek(-1*len(self.tail),2)
             self.kmlFile.write(placemark)
             self.kmlFile.write(self.tail)
@@ -106,7 +160,7 @@ class KmlConsumer(Consumer):
         #copy and reset the current set of packets
         packets=self.packets[:]
         self.packets=[]
-        keepAge=float(self.parameters.get('keep_age'))
+        keepAge=float(self.parameters.keep_age)
         now=datetime.datetime.utcnow()
         c=0
         for i in range(len(packets)-1):
@@ -119,3 +173,12 @@ class KmlConsumer(Consumer):
                 c+=1
 
         info('%d Position Reports' % c)
+
+if __name__=='__main__':
+    d=open(r'C:\proj\pyAPRS\output\bum_packets.txt').read()
+    dd=d.split('\n')
+    p=BasicPacket()
+    p.fromAPRSIS(dd[0])
+    k=KmlPacket(p)
+    t=open(r'C:\proj\pyAPRS\resources\kml_placemark.txt').read()
+    open(r'C:\proj\pyAPRS\output\bum_packets.kml','wb').write(k.asPlacemark(t))
