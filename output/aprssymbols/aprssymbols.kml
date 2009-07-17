@@ -13,14 +13,14 @@
   </StyleMap>
   <Style id="sn_t1s1">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s1.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -35,7 +35,7 @@
   </Style>
   <Style id="sh_t1s1">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s1.png</href>
       </Icon>
@@ -67,14 +67,14 @@
   </StyleMap>
   <Style id="sn_t1s2">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s2.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -89,7 +89,7 @@
   </Style>
   <Style id="sh_t1s2">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s2.png</href>
       </Icon>
@@ -121,14 +121,14 @@
   </StyleMap>
   <Style id="sn_t1s3">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s3.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -143,7 +143,7 @@
   </Style>
   <Style id="sh_t1s3">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s3.png</href>
       </Icon>
@@ -175,14 +175,14 @@
   </StyleMap>
   <Style id="sn_t1s4">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s4.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -197,7 +197,7 @@
   </Style>
   <Style id="sh_t1s4">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s4.png</href>
       </Icon>
@@ -229,14 +229,14 @@
   </StyleMap>
   <Style id="sn_t1s5">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s5.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -251,7 +251,7 @@
   </Style>
   <Style id="sh_t1s5">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s5.png</href>
       </Icon>
@@ -283,14 +283,14 @@
   </StyleMap>
   <Style id="sn_t1s6">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s6.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -305,7 +305,7 @@
   </Style>
   <Style id="sh_t1s6">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s6.png</href>
       </Icon>
@@ -337,14 +337,14 @@
   </StyleMap>
   <Style id="sn_t1s7">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s7.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -359,7 +359,7 @@
   </Style>
   <Style id="sh_t1s7">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s7.png</href>
       </Icon>
@@ -391,14 +391,14 @@
   </StyleMap>
   <Style id="sn_t1s8">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s8.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -413,7 +413,7 @@
   </Style>
   <Style id="sh_t1s8">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s8.png</href>
       </Icon>
@@ -445,14 +445,14 @@
   </StyleMap>
   <Style id="sn_t1s9">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s9.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -467,7 +467,7 @@
   </Style>
   <Style id="sh_t1s9">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s9.png</href>
       </Icon>
@@ -499,14 +499,14 @@
   </StyleMap>
   <Style id="sn_t1s10">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s10.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -521,7 +521,7 @@
   </Style>
   <Style id="sh_t1s10">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s10.png</href>
       </Icon>
@@ -553,14 +553,14 @@
   </StyleMap>
   <Style id="sn_t1s11">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s11.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -575,7 +575,7 @@
   </Style>
   <Style id="sh_t1s11">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s11.png</href>
       </Icon>
@@ -607,14 +607,14 @@
   </StyleMap>
   <Style id="sn_t1s12">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s12.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -629,7 +629,7 @@
   </Style>
   <Style id="sh_t1s12">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s12.png</href>
       </Icon>
@@ -661,14 +661,14 @@
   </StyleMap>
   <Style id="sn_t1s13">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s13.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -683,7 +683,7 @@
   </Style>
   <Style id="sh_t1s13">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s13.png</href>
       </Icon>
@@ -715,14 +715,14 @@
   </StyleMap>
   <Style id="sn_t1s14">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s14.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -737,7 +737,7 @@
   </Style>
   <Style id="sh_t1s14">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s14.png</href>
       </Icon>
@@ -769,14 +769,14 @@
   </StyleMap>
   <Style id="sn_t1s15">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s15.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -791,7 +791,7 @@
   </Style>
   <Style id="sh_t1s15">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s15.png</href>
       </Icon>
@@ -823,14 +823,14 @@
   </StyleMap>
   <Style id="sn_t1s16">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s16.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -845,7 +845,7 @@
   </Style>
   <Style id="sh_t1s16">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s16.png</href>
       </Icon>
@@ -877,14 +877,14 @@
   </StyleMap>
   <Style id="sn_t1s17">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s17.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -899,7 +899,7 @@
   </Style>
   <Style id="sh_t1s17">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s17.png</href>
       </Icon>
@@ -931,14 +931,14 @@
   </StyleMap>
   <Style id="sn_t1s18">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s18.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -953,7 +953,7 @@
   </Style>
   <Style id="sh_t1s18">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s18.png</href>
       </Icon>
@@ -985,14 +985,14 @@
   </StyleMap>
   <Style id="sn_t1s19">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s19.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1007,7 +1007,7 @@
   </Style>
   <Style id="sh_t1s19">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s19.png</href>
       </Icon>
@@ -1039,14 +1039,14 @@
   </StyleMap>
   <Style id="sn_t1s20">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s20.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1061,7 +1061,7 @@
   </Style>
   <Style id="sh_t1s20">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s20.png</href>
       </Icon>
@@ -1093,14 +1093,14 @@
   </StyleMap>
   <Style id="sn_t1s21">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s21.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1115,7 +1115,7 @@
   </Style>
   <Style id="sh_t1s21">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s21.png</href>
       </Icon>
@@ -1147,14 +1147,14 @@
   </StyleMap>
   <Style id="sn_t1s22">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s22.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1169,7 +1169,7 @@
   </Style>
   <Style id="sh_t1s22">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s22.png</href>
       </Icon>
@@ -1201,14 +1201,14 @@
   </StyleMap>
   <Style id="sn_t1s23">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s23.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1223,7 +1223,7 @@
   </Style>
   <Style id="sh_t1s23">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s23.png</href>
       </Icon>
@@ -1255,14 +1255,14 @@
   </StyleMap>
   <Style id="sn_t1s24">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s24.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1277,7 +1277,7 @@
   </Style>
   <Style id="sh_t1s24">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s24.png</href>
       </Icon>
@@ -1309,14 +1309,14 @@
   </StyleMap>
   <Style id="sn_t1s25">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s25.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1331,7 +1331,7 @@
   </Style>
   <Style id="sh_t1s25">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s25.png</href>
       </Icon>
@@ -1363,14 +1363,14 @@
   </StyleMap>
   <Style id="sn_t1s26">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s26.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1385,7 +1385,7 @@
   </Style>
   <Style id="sh_t1s26">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s26.png</href>
       </Icon>
@@ -1417,14 +1417,14 @@
   </StyleMap>
   <Style id="sn_t1s27">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s27.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1439,7 +1439,7 @@
   </Style>
   <Style id="sh_t1s27">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s27.png</href>
       </Icon>
@@ -1471,14 +1471,14 @@
   </StyleMap>
   <Style id="sn_t1s28">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s28.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1493,7 +1493,7 @@
   </Style>
   <Style id="sh_t1s28">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s28.png</href>
       </Icon>
@@ -1525,14 +1525,14 @@
   </StyleMap>
   <Style id="sn_t1s29">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s29.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1547,7 +1547,7 @@
   </Style>
   <Style id="sh_t1s29">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s29.png</href>
       </Icon>
@@ -1579,14 +1579,14 @@
   </StyleMap>
   <Style id="sn_t1s30">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s30.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1601,7 +1601,7 @@
   </Style>
   <Style id="sh_t1s30">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s30.png</href>
       </Icon>
@@ -1633,14 +1633,14 @@
   </StyleMap>
   <Style id="sn_t1s31">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s31.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1655,7 +1655,7 @@
   </Style>
   <Style id="sh_t1s31">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s31.png</href>
       </Icon>
@@ -1687,14 +1687,14 @@
   </StyleMap>
   <Style id="sn_t1s32">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s32.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1709,7 +1709,7 @@
   </Style>
   <Style id="sh_t1s32">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s32.png</href>
       </Icon>
@@ -1741,14 +1741,14 @@
   </StyleMap>
   <Style id="sn_t1s33">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s33.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1763,7 +1763,7 @@
   </Style>
   <Style id="sh_t1s33">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s33.png</href>
       </Icon>
@@ -1795,14 +1795,14 @@
   </StyleMap>
   <Style id="sn_t1s34">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s34.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1817,7 +1817,7 @@
   </Style>
   <Style id="sh_t1s34">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s34.png</href>
       </Icon>
@@ -1849,14 +1849,14 @@
   </StyleMap>
   <Style id="sn_t1s35">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s35.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1871,7 +1871,7 @@
   </Style>
   <Style id="sh_t1s35">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s35.png</href>
       </Icon>
@@ -1903,14 +1903,14 @@
   </StyleMap>
   <Style id="sn_t1s36">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s36.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1925,7 +1925,7 @@
   </Style>
   <Style id="sh_t1s36">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s36.png</href>
       </Icon>
@@ -1957,14 +1957,14 @@
   </StyleMap>
   <Style id="sn_t1s37">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s37.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -1979,7 +1979,7 @@
   </Style>
   <Style id="sh_t1s37">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s37.png</href>
       </Icon>
@@ -2011,14 +2011,14 @@
   </StyleMap>
   <Style id="sn_t1s38">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s38.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2033,7 +2033,7 @@
   </Style>
   <Style id="sh_t1s38">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s38.png</href>
       </Icon>
@@ -2065,14 +2065,14 @@
   </StyleMap>
   <Style id="sn_t1s39">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s39.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2087,7 +2087,7 @@
   </Style>
   <Style id="sh_t1s39">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s39.png</href>
       </Icon>
@@ -2119,14 +2119,14 @@
   </StyleMap>
   <Style id="sn_t1s40">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s40.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2141,7 +2141,7 @@
   </Style>
   <Style id="sh_t1s40">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s40.png</href>
       </Icon>
@@ -2173,14 +2173,14 @@
   </StyleMap>
   <Style id="sn_t1s41">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s41.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2195,7 +2195,7 @@
   </Style>
   <Style id="sh_t1s41">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s41.png</href>
       </Icon>
@@ -2227,14 +2227,14 @@
   </StyleMap>
   <Style id="sn_t1s42">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s42.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2249,7 +2249,7 @@
   </Style>
   <Style id="sh_t1s42">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s42.png</href>
       </Icon>
@@ -2281,14 +2281,14 @@
   </StyleMap>
   <Style id="sn_t1s43">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s43.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2303,7 +2303,7 @@
   </Style>
   <Style id="sh_t1s43">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s43.png</href>
       </Icon>
@@ -2335,14 +2335,14 @@
   </StyleMap>
   <Style id="sn_t1s44">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s44.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2357,7 +2357,7 @@
   </Style>
   <Style id="sh_t1s44">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s44.png</href>
       </Icon>
@@ -2389,14 +2389,14 @@
   </StyleMap>
   <Style id="sn_t1s45">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s45.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2411,7 +2411,7 @@
   </Style>
   <Style id="sh_t1s45">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s45.png</href>
       </Icon>
@@ -2443,14 +2443,14 @@
   </StyleMap>
   <Style id="sn_t1s46">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s46.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2465,7 +2465,7 @@
   </Style>
   <Style id="sh_t1s46">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s46.png</href>
       </Icon>
@@ -2497,14 +2497,14 @@
   </StyleMap>
   <Style id="sn_t1s47">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s47.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2519,7 +2519,7 @@
   </Style>
   <Style id="sh_t1s47">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s47.png</href>
       </Icon>
@@ -2551,14 +2551,14 @@
   </StyleMap>
   <Style id="sn_t1s48">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s48.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2573,7 +2573,7 @@
   </Style>
   <Style id="sh_t1s48">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s48.png</href>
       </Icon>
@@ -2605,14 +2605,14 @@
   </StyleMap>
   <Style id="sn_t1s49">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s49.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2627,7 +2627,7 @@
   </Style>
   <Style id="sh_t1s49">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s49.png</href>
       </Icon>
@@ -2659,14 +2659,14 @@
   </StyleMap>
   <Style id="sn_t1s50">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s50.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2681,7 +2681,7 @@
   </Style>
   <Style id="sh_t1s50">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s50.png</href>
       </Icon>
@@ -2713,14 +2713,14 @@
   </StyleMap>
   <Style id="sn_t1s51">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s51.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2735,7 +2735,7 @@
   </Style>
   <Style id="sh_t1s51">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s51.png</href>
       </Icon>
@@ -2767,14 +2767,14 @@
   </StyleMap>
   <Style id="sn_t1s52">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s52.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2789,7 +2789,7 @@
   </Style>
   <Style id="sh_t1s52">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s52.png</href>
       </Icon>
@@ -2821,14 +2821,14 @@
   </StyleMap>
   <Style id="sn_t1s53">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s53.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2843,7 +2843,7 @@
   </Style>
   <Style id="sh_t1s53">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s53.png</href>
       </Icon>
@@ -2875,14 +2875,14 @@
   </StyleMap>
   <Style id="sn_t1s54">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s54.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2897,7 +2897,7 @@
   </Style>
   <Style id="sh_t1s54">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s54.png</href>
       </Icon>
@@ -2929,14 +2929,14 @@
   </StyleMap>
   <Style id="sn_t1s55">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s55.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -2951,7 +2951,7 @@
   </Style>
   <Style id="sh_t1s55">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s55.png</href>
       </Icon>
@@ -2983,14 +2983,14 @@
   </StyleMap>
   <Style id="sn_t1s56">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s56.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3005,7 +3005,7 @@
   </Style>
   <Style id="sh_t1s56">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s56.png</href>
       </Icon>
@@ -3037,14 +3037,14 @@
   </StyleMap>
   <Style id="sn_t1s57">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s57.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3059,7 +3059,7 @@
   </Style>
   <Style id="sh_t1s57">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s57.png</href>
       </Icon>
@@ -3091,14 +3091,14 @@
   </StyleMap>
   <Style id="sn_t1s58">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s58.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3113,7 +3113,7 @@
   </Style>
   <Style id="sh_t1s58">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s58.png</href>
       </Icon>
@@ -3145,14 +3145,14 @@
   </StyleMap>
   <Style id="sn_t1s59">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s59.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3167,7 +3167,7 @@
   </Style>
   <Style id="sh_t1s59">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s59.png</href>
       </Icon>
@@ -3199,14 +3199,14 @@
   </StyleMap>
   <Style id="sn_t1s60">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s60.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3221,7 +3221,7 @@
   </Style>
   <Style id="sh_t1s60">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s60.png</href>
       </Icon>
@@ -3253,14 +3253,14 @@
   </StyleMap>
   <Style id="sn_t1s61">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s61.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3275,7 +3275,7 @@
   </Style>
   <Style id="sh_t1s61">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s61.png</href>
       </Icon>
@@ -3307,14 +3307,14 @@
   </StyleMap>
   <Style id="sn_t1s62">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s62.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3329,7 +3329,7 @@
   </Style>
   <Style id="sh_t1s62">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s62.png</href>
       </Icon>
@@ -3361,14 +3361,14 @@
   </StyleMap>
   <Style id="sn_t1s63">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s63.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3383,7 +3383,7 @@
   </Style>
   <Style id="sh_t1s63">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s63.png</href>
       </Icon>
@@ -3415,14 +3415,14 @@
   </StyleMap>
   <Style id="sn_t1s64">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s64.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3437,7 +3437,7 @@
   </Style>
   <Style id="sh_t1s64">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s64.png</href>
       </Icon>
@@ -3469,14 +3469,14 @@
   </StyleMap>
   <Style id="sn_t1s65">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s65.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3491,7 +3491,7 @@
   </Style>
   <Style id="sh_t1s65">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s65.png</href>
       </Icon>
@@ -3523,14 +3523,14 @@
   </StyleMap>
   <Style id="sn_t1s66">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s66.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3545,7 +3545,7 @@
   </Style>
   <Style id="sh_t1s66">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s66.png</href>
       </Icon>
@@ -3577,14 +3577,14 @@
   </StyleMap>
   <Style id="sn_t1s67">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s67.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3599,7 +3599,7 @@
   </Style>
   <Style id="sh_t1s67">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s67.png</href>
       </Icon>
@@ -3631,14 +3631,14 @@
   </StyleMap>
   <Style id="sn_t1s68">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s68.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3653,7 +3653,7 @@
   </Style>
   <Style id="sh_t1s68">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s68.png</href>
       </Icon>
@@ -3685,14 +3685,14 @@
   </StyleMap>
   <Style id="sn_t1s69">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s69.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3707,7 +3707,7 @@
   </Style>
   <Style id="sh_t1s69">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s69.png</href>
       </Icon>
@@ -3739,14 +3739,14 @@
   </StyleMap>
   <Style id="sn_t1s70">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s70.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3761,7 +3761,7 @@
   </Style>
   <Style id="sh_t1s70">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s70.png</href>
       </Icon>
@@ -3793,14 +3793,14 @@
   </StyleMap>
   <Style id="sn_t1s71">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s71.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3815,7 +3815,7 @@
   </Style>
   <Style id="sh_t1s71">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s71.png</href>
       </Icon>
@@ -3847,14 +3847,14 @@
   </StyleMap>
   <Style id="sn_t1s72">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s72.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3869,7 +3869,7 @@
   </Style>
   <Style id="sh_t1s72">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s72.png</href>
       </Icon>
@@ -3901,14 +3901,14 @@
   </StyleMap>
   <Style id="sn_t1s73">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s73.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3923,7 +3923,7 @@
   </Style>
   <Style id="sh_t1s73">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s73.png</href>
       </Icon>
@@ -3955,14 +3955,14 @@
   </StyleMap>
   <Style id="sn_t1s74">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s74.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -3977,7 +3977,7 @@
   </Style>
   <Style id="sh_t1s74">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s74.png</href>
       </Icon>
@@ -4009,14 +4009,14 @@
   </StyleMap>
   <Style id="sn_t1s75">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s75.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4031,7 +4031,7 @@
   </Style>
   <Style id="sh_t1s75">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s75.png</href>
       </Icon>
@@ -4063,14 +4063,14 @@
   </StyleMap>
   <Style id="sn_t1s76">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s76.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4085,7 +4085,7 @@
   </Style>
   <Style id="sh_t1s76">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s76.png</href>
       </Icon>
@@ -4117,14 +4117,14 @@
   </StyleMap>
   <Style id="sn_t1s77">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s77.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4139,7 +4139,7 @@
   </Style>
   <Style id="sh_t1s77">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s77.png</href>
       </Icon>
@@ -4171,14 +4171,14 @@
   </StyleMap>
   <Style id="sn_t1s78">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s78.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4193,7 +4193,7 @@
   </Style>
   <Style id="sh_t1s78">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s78.png</href>
       </Icon>
@@ -4225,14 +4225,14 @@
   </StyleMap>
   <Style id="sn_t1s79">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s79.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4247,7 +4247,7 @@
   </Style>
   <Style id="sh_t1s79">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s79.png</href>
       </Icon>
@@ -4279,14 +4279,14 @@
   </StyleMap>
   <Style id="sn_t1s80">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s80.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4301,7 +4301,7 @@
   </Style>
   <Style id="sh_t1s80">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s80.png</href>
       </Icon>
@@ -4333,14 +4333,14 @@
   </StyleMap>
   <Style id="sn_t1s81">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s81.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4355,7 +4355,7 @@
   </Style>
   <Style id="sh_t1s81">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s81.png</href>
       </Icon>
@@ -4387,14 +4387,14 @@
   </StyleMap>
   <Style id="sn_t1s82">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s82.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4409,7 +4409,7 @@
   </Style>
   <Style id="sh_t1s82">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s82.png</href>
       </Icon>
@@ -4441,14 +4441,14 @@
   </StyleMap>
   <Style id="sn_t1s83">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s83.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4463,7 +4463,7 @@
   </Style>
   <Style id="sh_t1s83">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s83.png</href>
       </Icon>
@@ -4495,14 +4495,14 @@
   </StyleMap>
   <Style id="sn_t1s84">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s84.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4517,7 +4517,7 @@
   </Style>
   <Style id="sh_t1s84">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s84.png</href>
       </Icon>
@@ -4549,14 +4549,14 @@
   </StyleMap>
   <Style id="sn_t1s85">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s85.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4571,7 +4571,7 @@
   </Style>
   <Style id="sh_t1s85">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s85.png</href>
       </Icon>
@@ -4603,14 +4603,14 @@
   </StyleMap>
   <Style id="sn_t1s86">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s86.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4625,7 +4625,7 @@
   </Style>
   <Style id="sh_t1s86">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s86.png</href>
       </Icon>
@@ -4657,14 +4657,14 @@
   </StyleMap>
   <Style id="sn_t1s87">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s87.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4679,7 +4679,7 @@
   </Style>
   <Style id="sh_t1s87">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s87.png</href>
       </Icon>
@@ -4711,14 +4711,14 @@
   </StyleMap>
   <Style id="sn_t1s88">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s88.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4733,7 +4733,7 @@
   </Style>
   <Style id="sh_t1s88">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s88.png</href>
       </Icon>
@@ -4765,14 +4765,14 @@
   </StyleMap>
   <Style id="sn_t1s89">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s89.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4787,7 +4787,7 @@
   </Style>
   <Style id="sh_t1s89">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s89.png</href>
       </Icon>
@@ -4819,14 +4819,14 @@
   </StyleMap>
   <Style id="sn_t1s90">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s90.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4841,7 +4841,7 @@
   </Style>
   <Style id="sh_t1s90">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s90.png</href>
       </Icon>
@@ -4873,14 +4873,14 @@
   </StyleMap>
   <Style id="sn_t1s91">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s91.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4895,7 +4895,7 @@
   </Style>
   <Style id="sh_t1s91">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s91.png</href>
       </Icon>
@@ -4927,14 +4927,14 @@
   </StyleMap>
   <Style id="sn_t1s92">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s92.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -4949,7 +4949,7 @@
   </Style>
   <Style id="sh_t1s92">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s92.png</href>
       </Icon>
@@ -4981,14 +4981,14 @@
   </StyleMap>
   <Style id="sn_t1s93">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s93.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5003,7 +5003,7 @@
   </Style>
   <Style id="sh_t1s93">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s93.png</href>
       </Icon>
@@ -5035,14 +5035,14 @@
   </StyleMap>
   <Style id="sn_t1s94">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s94.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5057,7 +5057,7 @@
   </Style>
   <Style id="sh_t1s94">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s94.png</href>
       </Icon>
@@ -5089,14 +5089,14 @@
   </StyleMap>
   <Style id="sn_t1s95">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s95.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5111,7 +5111,7 @@
   </Style>
   <Style id="sh_t1s95">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s95.png</href>
       </Icon>
@@ -5143,14 +5143,14 @@
   </StyleMap>
   <Style id="sn_t1s96">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t1s96.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5165,7 +5165,7 @@
   </Style>
   <Style id="sh_t1s96">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t1s96.png</href>
       </Icon>
@@ -5197,14 +5197,14 @@
   </StyleMap>
   <Style id="sn_t2s1">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s1.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5219,7 +5219,7 @@
   </Style>
   <Style id="sh_t2s1">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s1.png</href>
       </Icon>
@@ -5251,14 +5251,14 @@
   </StyleMap>
   <Style id="sn_t2s2">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s2.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5273,7 +5273,7 @@
   </Style>
   <Style id="sh_t2s2">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s2.png</href>
       </Icon>
@@ -5305,14 +5305,14 @@
   </StyleMap>
   <Style id="sn_t2s3">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s3.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5327,7 +5327,7 @@
   </Style>
   <Style id="sh_t2s3">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s3.png</href>
       </Icon>
@@ -5359,14 +5359,14 @@
   </StyleMap>
   <Style id="sn_t2s4">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s4.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5381,7 +5381,7 @@
   </Style>
   <Style id="sh_t2s4">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s4.png</href>
       </Icon>
@@ -5413,14 +5413,14 @@
   </StyleMap>
   <Style id="sn_t2s5">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s5.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5435,7 +5435,7 @@
   </Style>
   <Style id="sh_t2s5">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s5.png</href>
       </Icon>
@@ -5467,14 +5467,14 @@
   </StyleMap>
   <Style id="sn_t2s6">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s6.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5489,7 +5489,7 @@
   </Style>
   <Style id="sh_t2s6">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s6.png</href>
       </Icon>
@@ -5521,14 +5521,14 @@
   </StyleMap>
   <Style id="sn_t2s7">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s7.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5543,7 +5543,7 @@
   </Style>
   <Style id="sh_t2s7">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s7.png</href>
       </Icon>
@@ -5575,14 +5575,14 @@
   </StyleMap>
   <Style id="sn_t2s8">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s8.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5597,7 +5597,7 @@
   </Style>
   <Style id="sh_t2s8">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s8.png</href>
       </Icon>
@@ -5629,14 +5629,14 @@
   </StyleMap>
   <Style id="sn_t2s9">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s9.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5651,7 +5651,7 @@
   </Style>
   <Style id="sh_t2s9">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s9.png</href>
       </Icon>
@@ -5683,14 +5683,14 @@
   </StyleMap>
   <Style id="sn_t2s10">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s10.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5705,7 +5705,7 @@
   </Style>
   <Style id="sh_t2s10">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s10.png</href>
       </Icon>
@@ -5737,14 +5737,14 @@
   </StyleMap>
   <Style id="sn_t2s11">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s11.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5759,7 +5759,7 @@
   </Style>
   <Style id="sh_t2s11">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s11.png</href>
       </Icon>
@@ -5791,14 +5791,14 @@
   </StyleMap>
   <Style id="sn_t2s12">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s12.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5813,7 +5813,7 @@
   </Style>
   <Style id="sh_t2s12">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s12.png</href>
       </Icon>
@@ -5845,14 +5845,14 @@
   </StyleMap>
   <Style id="sn_t2s13">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s13.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5867,7 +5867,7 @@
   </Style>
   <Style id="sh_t2s13">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s13.png</href>
       </Icon>
@@ -5899,14 +5899,14 @@
   </StyleMap>
   <Style id="sn_t2s14">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s14.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5921,7 +5921,7 @@
   </Style>
   <Style id="sh_t2s14">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s14.png</href>
       </Icon>
@@ -5953,14 +5953,14 @@
   </StyleMap>
   <Style id="sn_t2s15">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s15.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -5975,7 +5975,7 @@
   </Style>
   <Style id="sh_t2s15">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s15.png</href>
       </Icon>
@@ -6007,14 +6007,14 @@
   </StyleMap>
   <Style id="sn_t2s16">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s16.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6029,7 +6029,7 @@
   </Style>
   <Style id="sh_t2s16">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s16.png</href>
       </Icon>
@@ -6061,14 +6061,14 @@
   </StyleMap>
   <Style id="sn_t2s17">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s17.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6083,7 +6083,7 @@
   </Style>
   <Style id="sh_t2s17">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s17.png</href>
       </Icon>
@@ -6115,14 +6115,14 @@
   </StyleMap>
   <Style id="sn_t2s18">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s18.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6137,7 +6137,7 @@
   </Style>
   <Style id="sh_t2s18">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s18.png</href>
       </Icon>
@@ -6169,14 +6169,14 @@
   </StyleMap>
   <Style id="sn_t2s19">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s19.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6191,7 +6191,7 @@
   </Style>
   <Style id="sh_t2s19">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s19.png</href>
       </Icon>
@@ -6223,14 +6223,14 @@
   </StyleMap>
   <Style id="sn_t2s20">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s20.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6245,7 +6245,7 @@
   </Style>
   <Style id="sh_t2s20">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s20.png</href>
       </Icon>
@@ -6277,14 +6277,14 @@
   </StyleMap>
   <Style id="sn_t2s21">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s21.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6299,7 +6299,7 @@
   </Style>
   <Style id="sh_t2s21">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s21.png</href>
       </Icon>
@@ -6331,14 +6331,14 @@
   </StyleMap>
   <Style id="sn_t2s22">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s22.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6353,7 +6353,7 @@
   </Style>
   <Style id="sh_t2s22">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s22.png</href>
       </Icon>
@@ -6385,14 +6385,14 @@
   </StyleMap>
   <Style id="sn_t2s23">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s23.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6407,7 +6407,7 @@
   </Style>
   <Style id="sh_t2s23">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s23.png</href>
       </Icon>
@@ -6439,14 +6439,14 @@
   </StyleMap>
   <Style id="sn_t2s24">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s24.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6461,7 +6461,7 @@
   </Style>
   <Style id="sh_t2s24">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s24.png</href>
       </Icon>
@@ -6493,14 +6493,14 @@
   </StyleMap>
   <Style id="sn_t2s25">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s25.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6515,7 +6515,7 @@
   </Style>
   <Style id="sh_t2s25">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s25.png</href>
       </Icon>
@@ -6547,14 +6547,14 @@
   </StyleMap>
   <Style id="sn_t2s26">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s26.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6569,7 +6569,7 @@
   </Style>
   <Style id="sh_t2s26">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s26.png</href>
       </Icon>
@@ -6601,14 +6601,14 @@
   </StyleMap>
   <Style id="sn_t2s27">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s27.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6623,7 +6623,7 @@
   </Style>
   <Style id="sh_t2s27">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s27.png</href>
       </Icon>
@@ -6655,14 +6655,14 @@
   </StyleMap>
   <Style id="sn_t2s28">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s28.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6677,7 +6677,7 @@
   </Style>
   <Style id="sh_t2s28">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s28.png</href>
       </Icon>
@@ -6709,14 +6709,14 @@
   </StyleMap>
   <Style id="sn_t2s29">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s29.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6731,7 +6731,7 @@
   </Style>
   <Style id="sh_t2s29">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s29.png</href>
       </Icon>
@@ -6763,14 +6763,14 @@
   </StyleMap>
   <Style id="sn_t2s30">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s30.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6785,7 +6785,7 @@
   </Style>
   <Style id="sh_t2s30">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s30.png</href>
       </Icon>
@@ -6817,14 +6817,14 @@
   </StyleMap>
   <Style id="sn_t2s31">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s31.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6839,7 +6839,7 @@
   </Style>
   <Style id="sh_t2s31">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s31.png</href>
       </Icon>
@@ -6871,14 +6871,14 @@
   </StyleMap>
   <Style id="sn_t2s32">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s32.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6893,7 +6893,7 @@
   </Style>
   <Style id="sh_t2s32">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s32.png</href>
       </Icon>
@@ -6925,14 +6925,14 @@
   </StyleMap>
   <Style id="sn_t2s33">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s33.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -6947,7 +6947,7 @@
   </Style>
   <Style id="sh_t2s33">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s33.png</href>
       </Icon>
@@ -6979,14 +6979,14 @@
   </StyleMap>
   <Style id="sn_t2s34">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s34.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7001,7 +7001,7 @@
   </Style>
   <Style id="sh_t2s34">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s34.png</href>
       </Icon>
@@ -7033,14 +7033,14 @@
   </StyleMap>
   <Style id="sn_t2s35">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s35.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7055,7 +7055,7 @@
   </Style>
   <Style id="sh_t2s35">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s35.png</href>
       </Icon>
@@ -7087,14 +7087,14 @@
   </StyleMap>
   <Style id="sn_t2s36">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s36.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7109,7 +7109,7 @@
   </Style>
   <Style id="sh_t2s36">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s36.png</href>
       </Icon>
@@ -7141,14 +7141,14 @@
   </StyleMap>
   <Style id="sn_t2s37">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s37.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7163,7 +7163,7 @@
   </Style>
   <Style id="sh_t2s37">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s37.png</href>
       </Icon>
@@ -7195,14 +7195,14 @@
   </StyleMap>
   <Style id="sn_t2s38">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s38.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7217,7 +7217,7 @@
   </Style>
   <Style id="sh_t2s38">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s38.png</href>
       </Icon>
@@ -7249,14 +7249,14 @@
   </StyleMap>
   <Style id="sn_t2s39">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s39.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7271,7 +7271,7 @@
   </Style>
   <Style id="sh_t2s39">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s39.png</href>
       </Icon>
@@ -7303,14 +7303,14 @@
   </StyleMap>
   <Style id="sn_t2s40">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s40.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7325,7 +7325,7 @@
   </Style>
   <Style id="sh_t2s40">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s40.png</href>
       </Icon>
@@ -7357,14 +7357,14 @@
   </StyleMap>
   <Style id="sn_t2s41">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s41.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7379,7 +7379,7 @@
   </Style>
   <Style id="sh_t2s41">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s41.png</href>
       </Icon>
@@ -7411,14 +7411,14 @@
   </StyleMap>
   <Style id="sn_t2s42">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s42.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7433,7 +7433,7 @@
   </Style>
   <Style id="sh_t2s42">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s42.png</href>
       </Icon>
@@ -7465,14 +7465,14 @@
   </StyleMap>
   <Style id="sn_t2s43">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s43.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7487,7 +7487,7 @@
   </Style>
   <Style id="sh_t2s43">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s43.png</href>
       </Icon>
@@ -7519,14 +7519,14 @@
   </StyleMap>
   <Style id="sn_t2s44">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s44.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7541,7 +7541,7 @@
   </Style>
   <Style id="sh_t2s44">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s44.png</href>
       </Icon>
@@ -7573,14 +7573,14 @@
   </StyleMap>
   <Style id="sn_t2s45">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s45.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7595,7 +7595,7 @@
   </Style>
   <Style id="sh_t2s45">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s45.png</href>
       </Icon>
@@ -7627,14 +7627,14 @@
   </StyleMap>
   <Style id="sn_t2s46">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s46.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7649,7 +7649,7 @@
   </Style>
   <Style id="sh_t2s46">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s46.png</href>
       </Icon>
@@ -7681,14 +7681,14 @@
   </StyleMap>
   <Style id="sn_t2s47">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s47.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7703,7 +7703,7 @@
   </Style>
   <Style id="sh_t2s47">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s47.png</href>
       </Icon>
@@ -7735,14 +7735,14 @@
   </StyleMap>
   <Style id="sn_t2s48">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s48.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7757,7 +7757,7 @@
   </Style>
   <Style id="sh_t2s48">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s48.png</href>
       </Icon>
@@ -7789,14 +7789,14 @@
   </StyleMap>
   <Style id="sn_t2s49">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s49.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7811,7 +7811,7 @@
   </Style>
   <Style id="sh_t2s49">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s49.png</href>
       </Icon>
@@ -7843,14 +7843,14 @@
   </StyleMap>
   <Style id="sn_t2s50">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s50.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7865,7 +7865,7 @@
   </Style>
   <Style id="sh_t2s50">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s50.png</href>
       </Icon>
@@ -7897,14 +7897,14 @@
   </StyleMap>
   <Style id="sn_t2s51">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s51.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7919,7 +7919,7 @@
   </Style>
   <Style id="sh_t2s51">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s51.png</href>
       </Icon>
@@ -7951,14 +7951,14 @@
   </StyleMap>
   <Style id="sn_t2s52">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s52.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -7973,7 +7973,7 @@
   </Style>
   <Style id="sh_t2s52">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s52.png</href>
       </Icon>
@@ -8005,14 +8005,14 @@
   </StyleMap>
   <Style id="sn_t2s53">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s53.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8027,7 +8027,7 @@
   </Style>
   <Style id="sh_t2s53">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s53.png</href>
       </Icon>
@@ -8059,14 +8059,14 @@
   </StyleMap>
   <Style id="sn_t2s54">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s54.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8081,7 +8081,7 @@
   </Style>
   <Style id="sh_t2s54">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s54.png</href>
       </Icon>
@@ -8113,14 +8113,14 @@
   </StyleMap>
   <Style id="sn_t2s55">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s55.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8135,7 +8135,7 @@
   </Style>
   <Style id="sh_t2s55">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s55.png</href>
       </Icon>
@@ -8167,14 +8167,14 @@
   </StyleMap>
   <Style id="sn_t2s56">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s56.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8189,7 +8189,7 @@
   </Style>
   <Style id="sh_t2s56">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s56.png</href>
       </Icon>
@@ -8221,14 +8221,14 @@
   </StyleMap>
   <Style id="sn_t2s57">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s57.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8243,7 +8243,7 @@
   </Style>
   <Style id="sh_t2s57">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s57.png</href>
       </Icon>
@@ -8275,14 +8275,14 @@
   </StyleMap>
   <Style id="sn_t2s58">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s58.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8297,7 +8297,7 @@
   </Style>
   <Style id="sh_t2s58">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s58.png</href>
       </Icon>
@@ -8329,14 +8329,14 @@
   </StyleMap>
   <Style id="sn_t2s59">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s59.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8351,7 +8351,7 @@
   </Style>
   <Style id="sh_t2s59">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s59.png</href>
       </Icon>
@@ -8383,14 +8383,14 @@
   </StyleMap>
   <Style id="sn_t2s60">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s60.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8405,7 +8405,7 @@
   </Style>
   <Style id="sh_t2s60">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s60.png</href>
       </Icon>
@@ -8437,14 +8437,14 @@
   </StyleMap>
   <Style id="sn_t2s61">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s61.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8459,7 +8459,7 @@
   </Style>
   <Style id="sh_t2s61">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s61.png</href>
       </Icon>
@@ -8491,14 +8491,14 @@
   </StyleMap>
   <Style id="sn_t2s62">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s62.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8513,7 +8513,7 @@
   </Style>
   <Style id="sh_t2s62">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s62.png</href>
       </Icon>
@@ -8545,14 +8545,14 @@
   </StyleMap>
   <Style id="sn_t2s63">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s63.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8567,7 +8567,7 @@
   </Style>
   <Style id="sh_t2s63">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s63.png</href>
       </Icon>
@@ -8599,14 +8599,14 @@
   </StyleMap>
   <Style id="sn_t2s64">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s64.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8621,7 +8621,7 @@
   </Style>
   <Style id="sh_t2s64">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s64.png</href>
       </Icon>
@@ -8653,14 +8653,14 @@
   </StyleMap>
   <Style id="sn_t2s65">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s65.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8675,7 +8675,7 @@
   </Style>
   <Style id="sh_t2s65">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s65.png</href>
       </Icon>
@@ -8707,14 +8707,14 @@
   </StyleMap>
   <Style id="sn_t2s66">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s66.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8729,7 +8729,7 @@
   </Style>
   <Style id="sh_t2s66">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s66.png</href>
       </Icon>
@@ -8761,14 +8761,14 @@
   </StyleMap>
   <Style id="sn_t2s67">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s67.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8783,7 +8783,7 @@
   </Style>
   <Style id="sh_t2s67">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s67.png</href>
       </Icon>
@@ -8815,14 +8815,14 @@
   </StyleMap>
   <Style id="sn_t2s68">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s68.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8837,7 +8837,7 @@
   </Style>
   <Style id="sh_t2s68">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s68.png</href>
       </Icon>
@@ -8869,14 +8869,14 @@
   </StyleMap>
   <Style id="sn_t2s69">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s69.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8891,7 +8891,7 @@
   </Style>
   <Style id="sh_t2s69">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s69.png</href>
       </Icon>
@@ -8923,14 +8923,14 @@
   </StyleMap>
   <Style id="sn_t2s70">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s70.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8945,7 +8945,7 @@
   </Style>
   <Style id="sh_t2s70">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s70.png</href>
       </Icon>
@@ -8977,14 +8977,14 @@
   </StyleMap>
   <Style id="sn_t2s71">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s71.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -8999,7 +8999,7 @@
   </Style>
   <Style id="sh_t2s71">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s71.png</href>
       </Icon>
@@ -9031,14 +9031,14 @@
   </StyleMap>
   <Style id="sn_t2s72">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s72.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9053,7 +9053,7 @@
   </Style>
   <Style id="sh_t2s72">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s72.png</href>
       </Icon>
@@ -9085,14 +9085,14 @@
   </StyleMap>
   <Style id="sn_t2s73">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s73.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9107,7 +9107,7 @@
   </Style>
   <Style id="sh_t2s73">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s73.png</href>
       </Icon>
@@ -9139,14 +9139,14 @@
   </StyleMap>
   <Style id="sn_t2s74">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s74.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9161,7 +9161,7 @@
   </Style>
   <Style id="sh_t2s74">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s74.png</href>
       </Icon>
@@ -9193,14 +9193,14 @@
   </StyleMap>
   <Style id="sn_t2s75">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s75.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9215,7 +9215,7 @@
   </Style>
   <Style id="sh_t2s75">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s75.png</href>
       </Icon>
@@ -9247,14 +9247,14 @@
   </StyleMap>
   <Style id="sn_t2s76">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s76.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9269,7 +9269,7 @@
   </Style>
   <Style id="sh_t2s76">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s76.png</href>
       </Icon>
@@ -9301,14 +9301,14 @@
   </StyleMap>
   <Style id="sn_t2s77">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s77.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9323,7 +9323,7 @@
   </Style>
   <Style id="sh_t2s77">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s77.png</href>
       </Icon>
@@ -9355,14 +9355,14 @@
   </StyleMap>
   <Style id="sn_t2s78">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s78.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9377,7 +9377,7 @@
   </Style>
   <Style id="sh_t2s78">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s78.png</href>
       </Icon>
@@ -9409,14 +9409,14 @@
   </StyleMap>
   <Style id="sn_t2s79">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s79.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9431,7 +9431,7 @@
   </Style>
   <Style id="sh_t2s79">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s79.png</href>
       </Icon>
@@ -9463,14 +9463,14 @@
   </StyleMap>
   <Style id="sn_t2s80">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s80.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9485,7 +9485,7 @@
   </Style>
   <Style id="sh_t2s80">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s80.png</href>
       </Icon>
@@ -9517,14 +9517,14 @@
   </StyleMap>
   <Style id="sn_t2s81">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s81.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9539,7 +9539,7 @@
   </Style>
   <Style id="sh_t2s81">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s81.png</href>
       </Icon>
@@ -9571,14 +9571,14 @@
   </StyleMap>
   <Style id="sn_t2s82">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s82.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9593,7 +9593,7 @@
   </Style>
   <Style id="sh_t2s82">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s82.png</href>
       </Icon>
@@ -9625,14 +9625,14 @@
   </StyleMap>
   <Style id="sn_t2s83">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s83.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9647,7 +9647,7 @@
   </Style>
   <Style id="sh_t2s83">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s83.png</href>
       </Icon>
@@ -9679,14 +9679,14 @@
   </StyleMap>
   <Style id="sn_t2s84">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s84.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9701,7 +9701,7 @@
   </Style>
   <Style id="sh_t2s84">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s84.png</href>
       </Icon>
@@ -9733,14 +9733,14 @@
   </StyleMap>
   <Style id="sn_t2s85">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s85.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9755,7 +9755,7 @@
   </Style>
   <Style id="sh_t2s85">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s85.png</href>
       </Icon>
@@ -9787,14 +9787,14 @@
   </StyleMap>
   <Style id="sn_t2s86">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s86.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9809,7 +9809,7 @@
   </Style>
   <Style id="sh_t2s86">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s86.png</href>
       </Icon>
@@ -9841,14 +9841,14 @@
   </StyleMap>
   <Style id="sn_t2s87">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s87.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9863,7 +9863,7 @@
   </Style>
   <Style id="sh_t2s87">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s87.png</href>
       </Icon>
@@ -9895,14 +9895,14 @@
   </StyleMap>
   <Style id="sn_t2s88">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s88.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9917,7 +9917,7 @@
   </Style>
   <Style id="sh_t2s88">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s88.png</href>
       </Icon>
@@ -9949,14 +9949,14 @@
   </StyleMap>
   <Style id="sn_t2s89">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s89.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -9971,7 +9971,7 @@
   </Style>
   <Style id="sh_t2s89">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s89.png</href>
       </Icon>
@@ -10003,14 +10003,14 @@
   </StyleMap>
   <Style id="sn_t2s90">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s90.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -10025,7 +10025,7 @@
   </Style>
   <Style id="sh_t2s90">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s90.png</href>
       </Icon>
@@ -10057,14 +10057,14 @@
   </StyleMap>
   <Style id="sn_t2s91">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s91.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -10079,7 +10079,7 @@
   </Style>
   <Style id="sh_t2s91">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s91.png</href>
       </Icon>
@@ -10111,14 +10111,14 @@
   </StyleMap>
   <Style id="sn_t2s92">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s92.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -10133,7 +10133,7 @@
   </Style>
   <Style id="sh_t2s92">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s92.png</href>
       </Icon>
@@ -10165,14 +10165,14 @@
   </StyleMap>
   <Style id="sn_t2s93">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s93.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -10187,7 +10187,7 @@
   </Style>
   <Style id="sh_t2s93">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s93.png</href>
       </Icon>
@@ -10219,14 +10219,14 @@
   </StyleMap>
   <Style id="sn_t2s94">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s94.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -10241,7 +10241,7 @@
   </Style>
   <Style id="sh_t2s94">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s94.png</href>
       </Icon>
@@ -10273,14 +10273,14 @@
   </StyleMap>
   <Style id="sn_t2s95">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s95.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -10295,7 +10295,7 @@
   </Style>
   <Style id="sh_t2s95">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s95.png</href>
       </Icon>
@@ -10327,14 +10327,14 @@
   </StyleMap>
   <Style id="sn_t2s96">
     <IconStyle>
-      <scale>0.6</scale>
+      <scale>0.7</scale>
       <Icon>
         <href>t2s96.png</href>
       </Icon>
     </IconStyle>
     <LabelStyle>
       <color>7ff000000</color>
-      <scale>1</scale>
+      <scale>0.8</scale>
     </LabelStyle>
     <LineStyle>
       <color>ff0000ff</color>
@@ -10349,7 +10349,7 @@
   </Style>
   <Style id="sh_t2s96">
     <IconStyle>
-      <scale>1.2</scale>
+      <scale>1.0</scale>
       <Icon>
         <href>t2s96.png</href>
       </Icon>

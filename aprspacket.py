@@ -6,6 +6,8 @@ debug=logger.debug
 info=logger.info
 exception=logger.exception
 
+import miceparse
+
 # define indices for icon lookups
 SYMBOLS=r""" !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~  """
 TABLES='/\\'
@@ -13,7 +15,7 @@ TABLES='/\\'
 class BasicPacket(object):
     def __init__(self,):
         self.utcTime=None
-        self.reportTime=None
+        self.reportTime=None  ##TODO: report time is part of the payload
         self.aprsisString=''
         self.station=''
         self.path=''
@@ -48,6 +50,12 @@ class BasicPacket(object):
         td=datetime.datetime.utcnow()-datetime.datetime.now()
         local=self.utcTime-td
         return local.strftime(format)
+
+    def __str__(self):
+        msg=''
+        for k,v in self.__dict__.items():
+            msg+='\t%s : %s\n' % (k,v)
+        return msg
 
 ##TODO: put parser in a seperate module
 class Payload(object):
