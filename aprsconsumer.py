@@ -37,13 +37,13 @@ class Consumer:
         while 1:
             # is it time to refresh
             if time.clock()-rt>self.refreshInterval:
-                debug('%s - Refresh Time' % self.name)
+                info('*** %s - Refresh Time' % self.name)
                 self.refresh()
                 rt=time.clock()
 
             # check the queue for incoming packets
             try:
-                flag,basicPacket=self.queueIn.get_nowait()
+                flag,data=self.queueIn.get_nowait()
             except Queue.Empty:
                 time.sleep(self.pollInterval)
                 continue
@@ -53,7 +53,10 @@ class Consumer:
 
             if flag=='stop':
                 break
-            self.consume(basicPacket)
+            if flag=='restart':
+                pass
+
+            self.consume(data)
 
     def consume(self,basicPacket):
         """

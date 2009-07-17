@@ -35,6 +35,9 @@ class Main(Producer):
                 ##TODO: seperate select exceptions from other errors
                 ##          ie. network failures, disapearing host, etc
                 exception('Select failed, attempt to reopen socket')
+                exception('readReady - %s' % readReady)
+                exception('writeReady - %s' % writeReady)
+                exception('inReady - %s' % inError)
                 time.sleep(0.2)
                 self.__openSocket()
 

@@ -13,10 +13,19 @@ from aprspacket import BasicPacket
 #from xml.sax.saxutils import escape
 #from xmlrpclib import Binary as encode
 
-import logging
+import logging,sys
 logger = logging.getLogger('MyLogger')
 debug=logger.debug
 info=logger.info
+exception=logger.exception
+
+##class Yada:
+##    def __init__(self):
+##        pass
+##    def write(self,msg):
+##        exception(msg)
+##yada=Yada()
+##sys.stderr=yada
 
 class KmlPacket(BasicPacket):
     def __init__(self,srcPacket):
@@ -26,86 +35,43 @@ class KmlPacket(BasicPacket):
         ##TODO: There's got to be a better way to with an existing instance
         BasicPacket.__init__(self)
         self.__dict__.update(srcPacket.__dict__.copy())
+        self.trackCoords=[]
 
     def asPlacemark(self,template):
         d=self.__dict__.copy()
-        #p=self.payload.__dict__.copy()
-        d.update(self.payload.__dict__)
-        #d['data']=escape(d['data'])
-        ##TODO: esc characters are breaking kml cdata???
-##        cd=''
-##        for c in d['data']:
-##            if ord(c) in (27,):
-##                cd+=' '
-##            else: cd+=c
-##        d['data']=cd
-##
-##        cd=''
-##        for c in d['aprsisString']:
-##            if ord(c) in (27,):
-##                cd+=' '
-##            else: cd+=c
-##        d['aprsisString']=cd
+        d.update(self.payload.__dict__.copy())
 
         d['data']=self.encode(d['data'])
         d['aprsisString']=self.encode(d['aprsisString'])
         d['localTime']=self.localTime()
 
-        return template % d
+        trackCoords=''
+        for coords in self.trackCoords:
+            trackCoords+='%s ' % ','.join(coords)
 
+        d['trackCoords']=trackCoords
+
+
+        d['style']='t%ds2' % d['symbolTable']
+        try:
+            d['style']='t%ds%d' % (d['symbolTable'],d['symbol'])
+        except:
+            pass
+
+        return template % d
 
     def encode(self,str):
         new=[]
-        for ch in str:
-            #print ch,ord(ch)
-            ##TODO: fix me
+        for c in str:
+            ch=ord(c)
+            #If the character is not in the approved XML character set
+            #    convert it to a hex reference
             if ((ch == 0x9) | (ch == 0xA) | (ch == 0xD) | ((ch >= 0x20) & (ch <= 0xD7FF)) | ((ch >= 0xE000) & (ch <= 0xFFFD)) | ((ch >= 0x10000) & (ch <= 0x10FFFF))):
-                new.append(ch)
+                new.append(c)
             else:
-                new.append(' ')
+                ##TODO: Proper hex strings in XML?
+                new.append('0x%d' % ch)
         return ''.join(new)
-
-    def xencode(self,str):
-        new=[]
-        for c in unicode(str,"utf-8"):
-            try:
-                new.append(c.encode("cp1252"))
-            except:
-                raise
-                new.append(c.encode("iso-8859-15"))
-        return ''.join(new)
-
-##    #---encode for xml
-##    ## http://code.activestate.com/recipes/303668/
-##    def encode_for_xml(self,unicode_data, encoding='utf-8'):
-##        """
-##        Encode unicode_data for use as XML or HTML, with characters outside
-##        of the encoding converted to XML numeric character references.
-##        """
-##        try:
-##            return unicode_data.encode(encoding, 'xmlcharrefreplace')
-##        except ValueError:
-##            raise
-##            # ValueError is raised if there are unencodable chars in the
-##            # data and the 'xmlcharrefreplace' error handler is not found.
-##            # Pre-2.3 Python doesn't support the 'xmlcharrefreplace' error
-##            # handler, so we'll emulate it.
-##            return self._xmlcharref_encode(unicode_data, encoding)
-##
-##    def _xmlcharref_encode(self,unicode_data, encoding):
-##        """Emulate Python 2.3's 'xmlcharrefreplace' encoding error handler."""
-##        chars = []
-##        # Step through the unicode_data string one character at a time in
-##        # order to catch unencodable characters:
-##        for char in unicode_data:
-##            try:
-##                chars.append(char.encode(encoding, 'strict'))
-##            except UnicodeError:
-##                chars.append('&#%i;' % ord(char))
-##        return ''.join(chars)
-
-##    def __str__(self):
-##        return self.asPlacemark()
 
 class Main(Consumer):
     def __init__(self,parameters,name):
@@ -120,11 +86,16 @@ class Main(Consumer):
         self.packets=[]
 
     def __initKML(self):
+        """
+        Initiate the kml file by writing out the kml header and tail strings
+        """
+        debug('Rebuild kml')
         self.header=open(self.headerFile).read()
         self.tail=open(self.tailFile).read()
         self.kmlFile=open(self.kmlPath,'wb+')
         self.kmlFile.write(self.header)
         self.kmlFile.write(self.tail)
+        self.kmlFile.close()
 
     def consume(self,srcPacket):
         #debug('KML Consuming: %s' % srcPacket)
@@ -151,13 +122,17 @@ class Main(Consumer):
         return True
 
     def refresh(self):
-        debug('KML refresh')
+        """
+        Refresh the KML file from the datastore
+        """
+        info('KML refresh')
         try:self.kmlFile.close()
         except:
-            debug('Unable to close kml file')
+            exception('Unable to close kml file')
             pass
         self.__initKML()
         #copy and reset the current set of packets
+        ##TODO: convert self.packets to a database
         packets=self.packets[:]
         self.packets=[]
         keepAge=float(self.parameters.keep_age)
@@ -172,7 +147,7 @@ class Main(Consumer):
                 self.consume(packet)
                 c+=1
 
-        info('%d Position Reports' % c)
+        info('Refreshed %d Position Reports' % c)
 
 if __name__=='__main__':
     d=open(r'C:\proj\pyAPRS\output\bum_packets.txt').read()

@@ -1,7 +1,10 @@
     <Placemark>
       <name>%(station)s</name>
-      <styleUrl>C:/proj/pyAPRS/resources/aprsstyles.kml#aprs_table1_symbol1</styleUrl>
-      <description><![CDATA[Station: <b>%(station)s</b>
+      <styleUrl>aprssymbols/aprssymbols.kml#msn_%(style)s</styleUrl>
+      <description><![CDATA[
+          <img src="aprssymbols/%(style)s.png" alt="%(style)s" width="45" height="45"/>
+          <br> Station: <b>%(station)s</b>
+          <br> Symbol: %(symbolTable)s,%(symbol)s, %(style)s
           <br>Time: %(localTime)s
           <br>Path: %(path)s
           <br>Data: %(data)s
@@ -9,7 +12,16 @@
           <br>
           ]]>
       </description>
-      <Point>
-        <coordinates>%(longitude).4f,%(latitude).4f,%(elevation)d</coordinates>
-      </Point>
+      <MultiGeometry>
+        <Point>
+          <coordinates>
+            %(longitude).4f,%(latitude).4f,%(elevation)d
+          </coordinates>
+        </Point>
+        <LineString>
+          <Coordinates>
+            -123,45,0 -122,42,0
+          </Coordinates>
+        </LineString>
+       </MultiGeometry>
     </Placemark>

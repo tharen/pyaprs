@@ -83,9 +83,10 @@ class Main:
             poll_interval=float(self.parameters.poll_interval)
 
             # reload the parameter file occasionally
-            if (time.time()-et)>(init_interval):
-                self.parameters=Parameters(self.iniFile,'main')
-                et=time.time()
+            ##TODO: add this back in since it was moved to main
+##            if (time.time()-et)>(init_interval):
+##                self.parameters=Parameters(self.iniFile,'main')
+##                et=time.time()
 
             # Wait x number of milliseconds
             time.sleep(poll_interval/1000.0)
@@ -94,7 +95,7 @@ class Main:
         try:
             self.packetLog.close()
         except:
-            exception('Error exiting mainLoop')
+            exception('**Error exiting mainLoop')
 
     def __pollProducers(self):
         for name,producer in self.producers.items():

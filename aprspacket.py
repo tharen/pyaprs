@@ -4,6 +4,11 @@ import logging
 logger = logging.getLogger('MyLogger')
 debug=logger.debug
 info=logger.info
+exception=logger.exception
+
+# define indices for icon lookups
+SYMBOLS=r""" !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~  """
+TABLES='/\\'
 
 class BasicPacket(object):
     def __init__(self,):
@@ -26,7 +31,11 @@ class BasicPacket(object):
         self.aprsisString=aprsisString
         self.station=stn
         self.path=path
-        r=self.payload.parse(data)
+        try:
+            r=self.payload.parse(data)
+        except:
+            exception('**Error parsing data: %s' % data)
+            return False
 
         if not r:
             #info("Can't parsing: %s" % aprsisString)
@@ -50,6 +59,9 @@ class Payload(object):
         self.latitude=0.0
         self.longitude=0.0
         self.elevation=0
+        self.symbolTable=1
+        self.symbol=2
+        self.overlay=''
 
     def parse(self,data):
         self.data=data
@@ -57,7 +69,7 @@ class Payload(object):
         #---Standard reports
         ##TODO: ) packets
         if self.data[0] in ('!','=',')'):
-            pat=r'(?P<lat>[0-9]{4}\.[0-9 ]{2})(?P<latNS>[NSns])(?P<table>.)(?P<lon>[01][0-9]{4}\.[0-9 ]{2})(?P<lonEW>[EWew])(?P<symbol>.)'
+            pat=r'(?P<lat>[0-9]{2}[0-9 ]{2}\.[0-9 ]{2})(?P<latNS>[NSns])(?P<table>.)(?P<lon>[01][0-9]{2}[0-9 ]{2}\.[0-9 ]{2})(?P<lonEW>[EWew])(?P<symbol>.)'
             group=re.search(pat,data)
             if group:
                 debug('re search group found')
@@ -71,8 +83,13 @@ class Payload(object):
                 if d['lonEW'].lower()=='w':
                     self.longitude*=-1
 
-                self.symbolTable=d['table']
-                self.symbol=d['symbol']
+                if d['table']=='/':
+                    self.symbolTable=1
+                    self.overlay=''
+                else:
+                    self.symbolTable=2
+                    self.overlay==d['table']
+                self.symbol=SYMBOLS.find(d['symbol'])
 
             else:
                 info('Unable to parse: %s' % data)
@@ -95,8 +112,14 @@ class Payload(object):
                 if d['lonEW'].lower()=='w':
                     self.longitude*=-1
 
-                self.symbolTable=d['table']
-                self.symbol=d['symbol']
+                if d['table']=='/':
+                    self.symbolTable=1
+                    self.overlay=''
+                else:
+                    self.symbolTable=2
+                    self.overlay==d['table']
+                self.symbol=SYMBOLS.find(d['symbol'])
+
                 ##TODO: parse time
                 self.reportTime=d['time']
 
@@ -119,10 +142,10 @@ class Payload(object):
         #---GPS GGA
         elif data[:6] in ('$GPGGA',):
             d=data.split(',')
-            self.latitude=int(d[2][:2]) + float(d[3][2:])/60.0
+            self.latitude=int(d[2][:2]) + float(d[2][2:])/60.0
             if d[3] in ('S','s'):
                 self.latitude*=-1
-            self.longitude=int(d[4][:3]) + float(d[5][3:])/60.0
+            self.longitude=int(d[4][:3]) + float(d[4][3:])/60.0
             if d[4] in ('W','w'):
                 self.longitude*=-1
             ##TODO: parse time
@@ -130,6 +153,22 @@ class Payload(object):
 
         else:
             info('Unrecognized data: %s' % data)
+            # Try to parse a lat/long from the packet
+            latPat=r'(?P<lat>[0-9]{2}[0-9 ]{2}\.[0-9 ]{2})(?P<latNS>[NSns])'
+            lonPat=r'(?P<lon>[01][0-9]{2}[0-9 ]{2}\.[0-9 ]{2})(?P<lonEW>[EWew])'
+            latG=re.search(latPat,data)
+            lonG=re.search(lonPat,data)
+            if latG and lonG:
+                latD=latG.groupdict()
+                lonD=lonG.groupdict()
+                self.latitude=int(latD['lat'][:2]) + float(latD['lat'][2:])/60.0
+                if latD['latNS'].lower()=='s':
+                    self.latitude*=-1
+
+                self.longitude=int(lonD['lon'][:3]) + float(lonD['lon'][3:])/60.0
+                if lonD['lonEW'].lower()=='w':
+                    self.longitude*=-1
+                debug('----lat/lon parsed anyway')
             return False
 
         return True
@@ -137,9 +176,9 @@ class Payload(object):
 if __name__=='__main__':
     #p=';KC7RWC-10*120712z4541.2 NW11852.5 Wa144.950MHz 1200 R11m RMSPacket EMCOMM'
     #p='=4502.25N/00737.52e- info: www.qsl.net/ik1mtx'
-    p='!5045.65n/01909.12e#phg2070 MiniDigi Czestochowa 342mnpm na testach'
+    #p='!5045.65n/01909.12e#phg2070 MiniDigi Czestochowa 342mnpm na testach'
     #p='$GPRMC,073728,A,3157.8168,N,11017.8101,W,0.000,0.0,120709,11.4,E*5D'
-    #p='$GPGGA,081200,4451.2358,N,08936.9620,W,2,07,1.5,341.4,M,-34.6,M,,*74'
+    p='$GPGGA,081200,4451.2358,N,08936.9620,W,2,07,1.5,341.4,M,-34.6,M,,*74'
     payload=Payload()
     payload.parse(p)
     print payload.__dict__

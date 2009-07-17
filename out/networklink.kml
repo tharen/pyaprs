@@ -4,12 +4,12 @@
 	<name>APRS To KML</name>
 	<open>1</open>
 	<Link>
-		<href>../output/aprs.kml</href>
+		<href>aprs.kml</href>
 		<refreshMode>onInterval</refreshMode>
 		<refreshInterval>30</refreshInterval>
 	</Link>
   <Link>
-		<href>../output/aprs.kml</href>
+		<href>aprs.kml</href>
 		<refreshMode>onInterval</refreshMode>
 		<refreshInterval>30</refreshInterval>
 	</Link>

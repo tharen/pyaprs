@@ -11,29 +11,31 @@ import logger
 my_logger = logging.getLogger('MyLogger')
 #my_logger.setLevel(logging.INFO)
 
+##TODO: read up on factory functions
 class ConfigSection(object):
     def __init__(self,items):
         for k,v in items:
             self.__dict__[k]=v
 
 class Main:
-    def __init__(self):
-        my_logger.debug('****Entering main****')
-        cfg=ConfigParser.ConfigParser()
-        cfg.read(ini)
+    def __init__(self,iniFile,autoStart=True):
+        my_logger.debug('****Creating an instance of Main****')
+        self.iniFile=iniFile
+        self.cfg=ConfigParser.ConfigParser()
+        self.cfg.read(self.iniFile)
 
         configMonitors={}
         configProducers={}
         configConsumers={}
 
-        for section in cfg.sections():
+        for section in self.cfg.sections():
             type,name=section.split('|')
             if type=='monitor':
-                configMonitors[name]=ConfigSection(cfg.items(section))
+                configMonitors[name]=ConfigSection(self.cfg.items(section))
             elif type=='producer':
-                configProducers[name]=ConfigSection(cfg.items(section))
+                configProducers[name]=ConfigSection(self.cfg.items(section))
             elif type=='consumer':
-                configConsumers[name]=ConfigSection(cfg.items(section))
+                configConsumers[name]=ConfigSection(self.cfg.items(section))
 
         self.monitors=[]
 
@@ -66,16 +68,8 @@ class Main:
                     configConsumers.pop(name)
                     #raise
 
-        #self.aprs=APRSMonitor(ini)
-
-        #kmlConsumer=KmlConsumer(ini,'kml_1')
-        #eval('import kmlconsumer')
-        #kmlConsumer=eval('KmlConsumer(' + ini + ',"kml_1")')
-
-        #inetProducer=InetProducer(ini,'aprsis_1')
-
-        #self.aprs.addConsumer(kmlConsumer)
-        #self.aprs.addProducer(inetProducer)
+        if autoStart:
+            self.start()
 
     def start(self):
         ##TODO: add support for multiple monitors
@@ -84,5 +78,5 @@ class Main:
 if __name__=='__main__':
     ini='aprsmonitor.ini'
 
-    main=Main()
-    main.start()
+    main=Main(ini)
+    #main.start()
