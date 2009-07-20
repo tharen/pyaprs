@@ -1,9 +1,9 @@
     <Placemark>
-      <name>%(station)s</name>
+      <name>%(fromCall)s</name>
       <styleUrl>aprssymbols/aprssymbols.kml#msn_%(style)s</styleUrl>
       <description><![CDATA[
           <img src="aprssymbols/%(style)s.png" alt="%(style)s" width="40" height="40"/>
-          <br> Station: <b>%(station)s</b>
+          <br> Station: <b>%(fromCall)s</b>
           <br> Symbol: %(symbolTable)s,%(symbol)s, %(style)s
           <br>Time: %(localTime)s
           <br>Path: %(path)s

@@ -17,26 +17,40 @@ class BasicPacket(object):
         self.utcTime=None
         self.reportTime=None  ##TODO: report time is part of the payload
         self.aprsisString=''
-        self.station=''
+        self.fromCall=''
+        self.fromSSID=''
         self.path=''
-        self.payload=Payload()
+        self.payload=Payload(self)
+        self.toCall=''
+        self.toSSID=''
 
     def fromAPRSIS(self,aprsisString,utcTime=datetime.datetime.utcnow()):
         debug('Parse APRSIS: %s' % (aprsisString.strip(),))
         try:
-            stn,data=aprsisString.strip().split('>',1)
+            fromCall,data=aprsisString.strip().split('>',1)
+            if '-' in fromCall:
+                fromCall,fromSSID=fromCall.split('-',1)
+            else:
+                fromSSID=''
+            toCall,data=data.split(',',1)
+            if '-' in toCall:
+                toCall,toSSID=toCall.split('-',1)
+            else:
+                toSSID=''
             path,data=data.split(':',1)
         except:
             info('Not a complete packet: %s' % (aprsisString.strip(),))
             return False
         self.utcTime=utcTime
         self.aprsisString=aprsisString
-        self.station=stn
+        self.fromCall=fromCall
+        self.fromSSID=fromSSID
+        self.toCall=toCall
         self.path=path
         try:
-            r=self.payload.parse(data)
+            r=self.payload.parse(self.toCall,data)
         except:
-            exception('**Error parsing data: %s' % data)
+            info('**Error parsing data: %s' % (aprsisString.strip(),))
             return False
 
         if not r:
@@ -58,11 +72,13 @@ class BasicPacket(object):
         return msg
 
 ##TODO: put parser in a seperate module
+##TODO: get rid of Payload object.  MIC packets blow the idea
 class Payload(object):
-    def __init__(self):
+    def __init__(self,parent):
         """
         Simple parser for APRS packet data payloads
         """
+        self.parent=parent
         self.data=''
         self.latitude=0.0
         self.longitude=0.0
@@ -71,7 +87,7 @@ class Payload(object):
         self.symbol=2
         self.overlay=''
 
-    def parse(self,data):
+    def parse(self,toCall,data):
         self.data=data
 
         #---Standard reports
@@ -135,6 +151,10 @@ class Payload(object):
                 info('Unable to parse: %s' % data)
                 return False
 
+        #---MIC
+        elif self.data[0] in ("\'","`","\x1c","\x1d"):
+            miceparse.decodeMice(self.parent)
+
         #---GPS RMC
         elif data[:6] in ('$GPRMC',):
             d=data.split(',')
@@ -182,11 +202,14 @@ class Payload(object):
         return True
 
 if __name__=='__main__':
+    x=BasicPacket()
     #p=';KC7RWC-10*120712z4541.2 NW11852.5 Wa144.950MHz 1200 R11m RMSPacket EMCOMM'
     #p='=4502.25N/00737.52e- info: www.qsl.net/ik1mtx'
     #p='!5045.65n/01909.12e#phg2070 MiniDigi Czestochowa 342mnpm na testach'
     #p='$GPRMC,073728,A,3157.8168,N,11017.8101,W,0.000,0.0,120709,11.4,E*5D'
-    p='$GPGGA,081200,4451.2358,N,08936.9620,W,2,07,1.5,341.4,M,-34.6,M,,*74'
-    payload=Payload()
-    payload.parse(p)
-    print payload.__dict__
+    #p='$GPGGA,081200,4451.2358,N,08936.9620,W,2,07,1.5,341.4,M,-34.6,M,,*74'
+    p="""WA7PIX-9>T6SQUU,KOPEAK*,WIDE2-1,qAR,AC7YY-12:`3Q2 {bk/]"4'}="""
+    payload=Payload(x)
+    x.fromAPRSIS(p)
+    #payload.parse()
+    print x

@@ -20,10 +20,13 @@ class Main(Producer):
         self.throttle=throttle #seconds to pause between socket reads
         self.socket=None
         self.socketBuffer=''
+        self.bytesToDate=0
+        self.startTime=0
         #self.parameters.__getattribute__(name)  #parameters are in a section titled [self.name]
 
     def start(self):
         self.__openSocket()
+        self.startTime=time.clock()
         while 1:
             try:
                 #select returns 3 lists of sockets
@@ -100,6 +103,7 @@ class Main(Producer):
             self.socketBuffer='%s' % lines.pop(-1)
 
         for line in lines:
+            self.bytesToDate+=len(line)
             #debug('Packet: %s' % (line.strip(),))
             if len(line.strip())==0:
                 debug('Data: %s' % data)
