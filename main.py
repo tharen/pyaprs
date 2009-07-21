@@ -9,7 +9,7 @@ import logger
 #,parameters
 
 my_logger = logging.getLogger('MyLogger')
-#my_logger.setLevel(logging.INFO)
+my_logger.setLevel(logging.INFO)
 
 ##TODO: read up on factory functions
 class ConfigSection(object):
