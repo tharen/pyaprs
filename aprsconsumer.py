@@ -27,16 +27,21 @@ class Consumer:
         self.handledPackets=0
         self.totalPackets=0
 
+    def _runFirst(self):
+        pass
+
     def start(self):
         """
         Main loop to handle BasicPackets placed in the queue
         """
         time.clock()
         debug('Consumer Starting: %s' % self.name)
+        self._runFirst()
         rt=time.clock()-self.refreshInterval
         while 1:
             # is it time to refresh
-            if time.clock()-rt>self.refreshInterval:
+            if (time.clock()-rt>self.refreshInterval) and \
+                    (self.refreshInterval>-1):
                 info('*** %s - Refresh Time' % self.name)
                 self.refresh()
                 rt=time.clock()
@@ -56,7 +61,10 @@ class Consumer:
             if flag=='restart':
                 pass
 
-            self.consume(data)
+            try:
+                self.consume(data)
+            except:
+                exception('(%s) Error consuming packet: %s' % (self.name,data))
 
     def consume(self,basicPacket):
         """
@@ -69,28 +77,4 @@ class Consumer:
         Do something on a time schedule
         """
         pass
-
-##class Producer:
-##    def __init__(self,iniFile,name):
-##        """
-##        Producer super class
-##        """
-##        self.iniFile=iniFile
-##        self.name=name
-##        self.status=0 #0-init, 1-running, 3-error
-##        self.errorMessage=''
-##        self.queueOut=Queue.Queue()
-##        self.parameters=Parameters(self.iniFile)
-##
-##    def start(self):
-##        """
-##        Start producing packets.  This would most likely be a loop
-##        of some sort to respond to a data stream, query interval, etc.
-##
-##        ** This should be overwritten
-##        """
-##        while 1:
-##            data='Error: Super Class instance'
-##            self.queueOut.put(data)
-##            time.sleep(0.5)
 

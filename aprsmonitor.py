@@ -77,7 +77,10 @@ class Main:
             if self.packetBuffer: debug('%d Packets to Parse' % len(self.packetBuffer))
             while self.packetBuffer:
                 ##TODO: error trap
-                self.__notifyConsumers(self.packetBuffer.pop(0))
+                #self.__notifyConsumers(self.packetBuffer.pop(0))
+                pass
+
+            self.packetBuffer=[]
 
             init_interval=float(self.parameters.init_interval)
             poll_interval=float(self.parameters.poll_interval)

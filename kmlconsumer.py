@@ -54,7 +54,7 @@ class KmlPacket(BasicPacket):
 
         d['style']='t%ds2' % d['symbolTable']
         try:
-            d['style']='t%ds%d' % (d['symbolTable'],d['symbol'])
+            d['style']='t%ds%d' % (d['symbolTable'],d['symbolCharacter'])
         except:
             pass
 

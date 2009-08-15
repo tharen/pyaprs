@@ -15,6 +15,8 @@ TABLES='/\\'
 class BasicPacket(object):
     def __init__(self,):
         self.utcTime=None
+        self.sourcePort=''
+        self.heardLocal=False
         self.reportTime=None  ##TODO: report time is part of the payload
         self.aprsisString=''
         self.fromCall=''
@@ -24,7 +26,30 @@ class BasicPacket(object):
         self.toCall=''
         self.toSSID=''
 
-    def fromAPRSIS(self,aprsisString,utcTime=datetime.datetime.utcnow()):
+    def fromDbRow(self,row):
+        self.utcTime=self.timeStampToUTC(row[0])
+        self.aprsisString=row[1]
+        self.sourcePort=row[2]
+        self.heardLocal=row[3]
+        self.fromCall=row[4]
+        self.fromSSID=row[5]
+        self.toCall=row[6]
+        self.toSSID=row[7]
+        self.path=row[8]
+        self.reportType=row[9]
+        self.payload.parse('%s-%s' % (self.toCall,self.toSSID),row[10])
+##        self.symbolTable=row[11]
+##        self.symbolCharacter=row[12]
+##        self.symbolOverlay=row[13]
+##        self.latitude=row[14]
+##        self.longitude=row[15]
+##        self.elevation=row[16]
+
+    def timeStampToUTC(self,ts):
+        return datetime.datetime.fromtimestamp(ts)
+
+    def fromAPRSIS(self,aprsisString,utcTime=datetime.datetime.utcnow()
+            ,sourcePort='',heardLocal=False):
         debug('Parse APRSIS: %s' % (aprsisString.strip(),))
         try:
             fromCall,data=aprsisString.strip().split('>',1)
@@ -42,6 +67,8 @@ class BasicPacket(object):
             info('Not a complete packet: %s' % (aprsisString.strip(),))
             return False
         self.utcTime=utcTime
+        self.sourcePort=sourcePort
+        self.heardLocal=heardLocal
         self.aprsisString=aprsisString
         self.fromCall=fromCall
         self.fromSSID=fromSSID
@@ -79,13 +106,14 @@ class Payload(object):
         Simple parser for APRS packet data payloads
         """
         self.parent=parent
+        self.reportType=''
         self.data=''
         self.latitude=0.0
         self.longitude=0.0
         self.elevation=0
         self.symbolTable=1
-        self.symbol=2
-        self.overlay=''
+        self.symbolCharacter=2
+        self.symbolOverlay=''
 
     def parse(self,toCall,data):
         self.data=data
@@ -97,6 +125,7 @@ class Payload(object):
             group=re.search(pat,data)
             if group:
                 debug('re search group found')
+                self.reportType='standard'
                 d=group.groupdict()
 
                 self.latitude=int(d['lat'][:2]) + float(d['lat'][2:])/60.0
@@ -109,11 +138,11 @@ class Payload(object):
 
                 if d['table']=='/':
                     self.symbolTable=1
-                    self.overlay=''
+                    self.symbolOverlay=''
                 else:
                     self.symbolTable=2
-                    self.overlay==d['table']
-                self.symbol=SYMBOLS.find(d['symbol'])
+                    self.symbolOverlay==d['table']
+                self.symbolCharacter=SYMBOLS.find(d['symbol'])
 
             else:
                 info('Unable to parse: %s' % data)
@@ -121,11 +150,12 @@ class Payload(object):
 
         #---Reports with time
         elif self.data[0] in (';','@','/'):
-            pat=r'(?P<time>[0-9]{6}[zh/]{1})(?P<lat>[0-9]{4}\.[0-9 ]{2})(?P<latNS>[NSns])(?P<table>.)(?P<lon>[01][0-9]{4}\.[0-9 ]{2})(?P<lonEW>[EWew])(?P<symbol>.)'
+            pat=r'(?P<time>[0-9]{6}[zh]{1})(?P<lat>[0-9]{2}[0-9 ]{2}\.[0-9 ]{2})(?P<latNS>[NSns])(?P<table>.)(?P<lon>[01][0-9]{2}[0-9 ]{2}\.[0-9 ]{2})(?P<lonEW>[EWew])(?P<symbol>.)'
             group=re.search(pat,data)
             ##TODO: combine common parse actions
             if group:
                 debug('re search group found')
+                self.reportType='standard with time'
                 d=group.groupdict()
 
                 self.latitude=int(d['lat'][:2]) + float(d['lat'][2:])/60.0
@@ -138,11 +168,11 @@ class Payload(object):
 
                 if d['table']=='/':
                     self.symbolTable=1
-                    self.overlay=''
+                    self.symbolOverlay=''
                 else:
                     self.symbolTable=2
-                    self.overlay==d['table']
-                self.symbol=SYMBOLS.find(d['symbol'])
+                    self.symbolOverlay==d['table']
+                self.symbolCharacter=SYMBOLS.find(d['symbol'])
 
                 ##TODO: parse time
                 self.reportTime=d['time']
@@ -153,10 +183,12 @@ class Payload(object):
 
         #---MIC
         elif self.data[0] in ("\'","`","\x1c","\x1d"):
+            self.reportType='mice'
             miceparse.decodeMice(self.parent)
 
         #---GPS RMC
         elif data[:6] in ('$GPRMC',):
+            self.reportType='$GPRMC'
             d=data.split(',')
             self.latitude=int(d[3][:2]) + float(d[3][2:])/60.0
             if d[4] in ('S','s'):
@@ -169,6 +201,7 @@ class Payload(object):
 
         #---GPS GGA
         elif data[:6] in ('$GPGGA',):
+            self.reportType='$GPGGA'
             d=data.split(',')
             self.latitude=int(d[2][:2]) + float(d[2][2:])/60.0
             if d[3] in ('S','s'):
@@ -187,6 +220,7 @@ class Payload(object):
             latG=re.search(latPat,data)
             lonG=re.search(lonPat,data)
             if latG and lonG:
+                self.reportType='Unhandled with position'
                 latD=latG.groupdict()
                 lonD=lonG.groupdict()
                 self.latitude=int(latD['lat'][:2]) + float(latD['lat'][2:])/60.0

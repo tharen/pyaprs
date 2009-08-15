@@ -9,7 +9,8 @@ import logger
 #,parameters
 
 my_logger = logging.getLogger('MyLogger')
-my_logger.setLevel(logging.INFO)
+#my_logger.setLevel(logging.DEBUG)
+info = my_logger.info
 
 ##TODO: read up on factory functions
 class ConfigSection(object):
@@ -24,18 +25,23 @@ class Main:
         self.cfg=ConfigParser.ConfigParser()
         self.cfg.read(self.iniFile)
 
+        my_logger.setLevel(10) #int(self.cfg.get('main','logLevel')))
+
         configMonitors={}
         configProducers={}
         configConsumers={}
 
-        for section in self.cfg.sections():
-            type,name=section.split('|')
+        for pluginName in self.cfg.sections():
+            #type,name=pluginName.split('|')
+            if pluginName=='main': continue
+
+            type=self.cfg.get(pluginName,'plugintype')
             if type=='monitor':
-                configMonitors[name]=ConfigSection(self.cfg.items(section))
+                configMonitors[pluginName]=ConfigSection(self.cfg.items(pluginName))
             elif type=='producer':
-                configProducers[name]=ConfigSection(self.cfg.items(section))
+                configProducers[pluginName]=ConfigSection(self.cfg.items(pluginName))
             elif type=='consumer':
-                configConsumers[name]=ConfigSection(self.cfg.items(section))
+                configConsumers[pluginName]=ConfigSection(self.cfg.items(pluginName))
 
         self.monitors=[]
 

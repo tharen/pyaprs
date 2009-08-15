@@ -13,6 +13,9 @@ debug=my_logger.debug
 info=my_logger.info
 exception=my_logger.exception
 
+PLUGINTYPE='PRODUCER'
+PLUGINNAME='APRSIS_INET'
+
 class Main(Producer):
     def __init__(self,parameters,name,timeout=10,throttle=0.1):
         Producer.__init__(self,parameters,name)
@@ -20,13 +23,18 @@ class Main(Producer):
         self.throttle=throttle #seconds to pause between socket reads
         self.socket=None
         self.socketBuffer=''
-        self.bytesToDate=0
+        self.bytesTally=0
+        self.packetTally=0
         self.startTime=0
+        self.bpsInterval=30
+        self.bpsBytes={}
+        self.bps=0
         #self.parameters.__getattribute__(name)  #parameters are in a section titled [self.name]
 
     def start(self):
         self.__openSocket()
         self.startTime=time.clock()
+        q=time.clock()
         while 1:
             try:
                 #select returns 3 lists of sockets
@@ -34,6 +42,10 @@ class Main(Producer):
                 readReady,writeReady,inError=select.select([self.socket,],[],[],self.timeout)
                 if self.socket in readReady:
                     self.__handleData()
+                    #log something interesting
+                    if time.clock()-q>10:
+                        info('Packet Tally: %d, Bytes Tally: %d, BPS: %.2f' % (self.packetTally,self.bytesTally,self.bps))
+                        q=time.clock()
             except:
                 ##TODO: seperate select exceptions from other errors
                 ##          ie. network failures, disapearing host, etc
@@ -41,7 +53,7 @@ class Main(Producer):
                 exception('readReady - %s' % readReady)
                 exception('writeReady - %s' % writeReady)
                 exception('inReady - %s' % inError)
-                time.sleep(0.2)
+                time.sleep(.5)
                 self.__openSocket()
 
             time.sleep(self.pollInterval)
@@ -77,10 +89,10 @@ class Main(Producer):
         connStr='user %s pass %s vers pyaprs 0.0 %s\r\n' % \
                 (username,password,adjunct)
         debug('APRSIS Login: %s' % self.socket.recv(200))
-        debug('Sending: %s' % connStr)
+        debug('Sending: %s' % connStr.strip())
         self.socket.send(connStr)
         d=self.socket.recv(200)
-        debug('Response: %s' % d)
+        debug('Response: %s' % d.strip())
 
         if d.startswith('# logresp %s verified' % username):
             debug('Login Successful')
@@ -103,7 +115,25 @@ class Main(Producer):
             self.socketBuffer='%s' % lines.pop(-1)
 
         for line in lines:
-            self.bytesToDate+=len(line)
+
+            #track traffic volume
+            x=time.clock()
+            bytes=len(line)
+
+            self.bytesTally+=bytes
+            self.packetTally+=1
+
+            #calculate the bits per second, processed packets
+            self.bpsBytes[x]=bytes
+            keys=self.bpsBytes.keys()
+            for k in keys:
+                if x-k>self.bpsInterval:
+                    self.bpsBytes.pop(k)
+            t=x-min(self.bpsBytes.keys())
+            b=sum(self.bpsBytes.values())
+            if t==0: self.bps=0
+            else: self.bps=b*8/t
+
             #debug('Packet: %s' % (line.strip(),))
             if len(line.strip())==0:
                 debug('Data: %s' % data)
