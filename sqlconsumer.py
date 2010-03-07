@@ -6,7 +6,8 @@ Consumes basic packets and stores them in a SQL database
 Currently SQLite3 only
 """
 from aprsconsumer import Consumer
-from aprspacket import BasicPacket
+from aprspacket import AprsFrame
+import datetime
 
 from sqlite3 import dbapi2 as dba
 
@@ -36,9 +37,8 @@ class Main(Consumer):
         debug('Storing Packet')
         cur=self.dbConn.cursor()
         cur.execute("""select * from Reports
-            where fromCall=? and fromSSID=?
-                and payload=?
-            """,(packet.fromCall,packet.fromSSID,packet.payload.data)
+            where sourceAddress=? and information=?
+            """,(str(packet.source),packet.information)
             )
         storedReport=cur.fetchone()
 
@@ -62,16 +62,14 @@ class Main(Consumer):
     def __insertReport(self,packet):
         sql="""insert into Reports (
             receivedTime
-            ,aprsisString
+            ,aprsString
             ,sourcePort
             ,heardLocal
-            ,fromCall
-            ,fromSSID
-            ,toCall
-            ,toSSID
-            ,path
-            ,reportType
-            ,payload
+            ,hasLocation
+            ,sourceAddress
+            ,destinationAddress
+            ,digipeaters
+            ,information
             ,symbolTable
             ,symbolCharacter
             ,symbolOverlay
@@ -79,19 +77,17 @@ class Main(Consumer):
             ,longitude
             ,elevation
             )
-            values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             """
-        vals=(  packet.utcTime
-                ,packet.aprsisString
+        vals=(  str(packet.receivedTime)
+                ,str(packet)
                 ,packet.sourcePort
                 ,packet.heardLocal
-                ,packet.fromCall
-                ,packet.fromSSID
-                ,packet.toCall
-                ,packet.toSSID
-                ,packet.path
-                ,packet.payload.reportType
-                ,packet.payload.data
+                ,packet.payload.hasLocation
+                ,str(packet.source)
+                ,str(packet.destination)
+                ,str(packet.digipeaters)
+                ,packet.information
                 ,packet.payload.symbolTable
                 ,packet.payload.symbolCharacter
                 ,packet.payload.symbolOverlay
@@ -124,16 +120,14 @@ class Main(Consumer):
 
         sql="""create table Reports (
             receivedTime date not null
-            ,aprsisString text(200) not null
+            ,aprsString text(200) not null
             ,sourcePort text(50)
             ,heardLocal bit
-            ,fromCall text(10) not null
-            ,fromSSID text(2)
-            ,toCall text(10) not null
-            ,toSSID text(2)
-            ,path text (50) not null
-            ,reportType (30) not null
-            ,payload text (100) not null
+            ,hasLocation bit
+            ,sourceAddress text(10) not null
+            ,destinationAddress text(10) not null
+            ,digipeaters text(100) not null
+            ,information text(256) not null
             ,symbolTable text(1)
             ,symbolCharacter text(1)
             ,symbolOverlay text(1)
@@ -142,9 +136,10 @@ class Main(Consumer):
             ,elevation real
 
             ,constraint pk_Reports_reportId
-                primary key (fromCall,fromSSID,receivedTime,payload)
+                primary key (sourceAddress,receivedTime,information)
             )
             """
+        print sql
         self.dbConn.execute(sql)
 ##        sql="""
 ##            alter table Reports
@@ -153,15 +148,14 @@ class Main(Consumer):
 ##            """
 ##        self.dbConn.execute(sql)
         sql="""
-            create index idx_Reports_fromCall
-                on Reports (fromCall)
+            create index idx_Reports_sourceAddress
+                on Reports (sourceAddress)
             """
         self.dbConn.execute(sql)
         sql="""
             create index idx_Reports_Positions
                 on Reports (
-                    fromCall,fromSSID
-                    ,latitude,longitude,elevation
+                    sourceAddress,latitude,longitude,elevation
                     )
             """
         self.dbConn.execute(sql)
@@ -175,7 +169,6 @@ class Main(Consumer):
 def test():
     import ConfigParser
     from main import ConfigSection
-    from aprspacket import BasicPacket
     dbConn=':memory:'
     iniFile='aprsmonitor.ini'
     cfg=ConfigParser.ConfigParser()
@@ -192,12 +185,11 @@ def test():
 
     packets=[]
     for report in reports:
-        bp=BasicPacket()
-        bp.fromAPRSIS(report)
+        bp=AprsFrame(report)
         packets.append(bp)
 
     for packet in packets:
-        print 'Storing: \n%s::%s' % ('-'.join((packet.fromCall,packet.fromSSID)),packet.payload.data)
+        print 'Storing: \n%s::%s' % (packet.source,packet.information)
         consumer.consume(packet)
 
     #consumer._buildDB()

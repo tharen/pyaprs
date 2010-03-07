@@ -1,6 +1,6 @@
 
 import socket,select,time,datetime
-from aprspacket import BasicPacket
+from aprspacket import AprsFrame
 from sqlite3 import dbapi2 as dba
 
 APPLICATION='pyaprs'
@@ -8,9 +8,23 @@ VERSION='0.0b'
 
 class APRSISClient:
     def __init__(self,packetHandler,host,port
-            ,username,password,adjunct
+            ,username='',password='',adjunct=''
             ,timeout=10,pollInterval=.1
             ):
+        """
+        Opens a connection to an APRSIS server and streams packet strings to
+        a handler
+
+        Args:
+        packetHandler - Any object that accepts APRS formatted packet strings
+        host - Address to APRSIS server
+        port - host port to connect to
+        username - APRSIS login username if required by the host
+        password - APRSIS password if required by the host
+        adjunct - Additional string to pass to the host, filters, etc
+        timeout - Maximum seconds to wait for a connection response from host
+        pollInterval - Seconds between reads requests to host
+        """
         self.hostName=host
         self.hostPort=port
         self.username=username
@@ -41,10 +55,15 @@ class APRSISClient:
                     try:
                         self.__handleData()
                     except:
+                        raise
                         print 'Error handling data'
                     #log something interesting
                     if time.clock()-q>10:
-                        print 'Packet Tally: %d, Bytes Tally: %d, BPS: %.2f' % (self.packetTally,self.bytesTally,self.bps)
+                        print '**********'
+                        print
+                        print 'Packet Tally: %d, KB Tally: %.2f, KBPS: %.2f' % (self.packetTally,self.bytesTally/1024.0,self.bps/1024.0)
+                        print
+                        print '**********'
                         q=time.clock()
 ##            except:
 ##                ##TODO: seperate select exceptions from other errors
@@ -56,6 +75,8 @@ class APRSISClient:
                 time.sleep(self.pollInterval)
 
     def __handleData(self):
+        ##TODO: identify unique stations that have identical calls
+        ##      ie. WINLINK
         try:
             data=self.socket.recv(200)
         except:
@@ -72,7 +93,8 @@ class APRSISClient:
             self.socketBuffer=''
         else:
             #buffer is not terminated by newline
-            lines=self.socketBuffer.strip().split('\r\n')
+            #lines=self.socketBuffer.strip().split('\r\n')
+            lines=self.socketBuffer.split('\r\n')
             self.socketBuffer='%s' % lines.pop(-1)
 
         for line in lines:
@@ -96,21 +118,26 @@ class APRSISClient:
             else: self.bps=b*8/t
 
             #print line.strip()
-            packet=BasicPacket()
+            packet=AprsFrame()
             try:
-                ok = packet.fromAPRSIS(line.strip(),utcTime)
+                l=line.strip()
+                ok = packet.parseAprs(l,utcTime)
             except:
                 ok=False
-                print 'Parse Error: %s' % line.strip()
+                print 'xxParse Error: %s' % line.strip()
+                raise
 
             if ok!=True:
-                print 'Unhandled Report: %s' % line.strip()
+                print 'Unparsable Report: %s' % line.strip()
                 continue
-            #if all looks good, post the packet to the output queue
+            #if all looks good, post the packet to the handler
 
             try:self.packetHandler(packet)
-            except:print line.strip()
-            del packet
+            except:
+                print 'Error Handling: %s' % line.strip()
+                raise
+
+            packet=None
 
     def __connect(self):
         print 'Opening socket to %s,%d' % (self.hostName,self.hostPort)
@@ -170,9 +197,8 @@ class SQLHandler:
     def __replaceReport(self,packet):
         cur=self.dbConn.cursor()
         cur.execute("""delete from Reports
-            where fromCall=? and fromSSID=?
-                and payload=?
-            """,(packet.fromCall,packet.fromSSID,packet.payload.data)
+            where fromCall=? and payload=?
+            """,(packet.fromCall,packet.payload.data)
             )
         cur.close()
 
@@ -181,16 +207,13 @@ class SQLHandler:
     def __insertReport(self,packet):
         sql="""insert into Reports (
             receivedTime
-            ,aprsisString
             ,sourcePort
             ,heardLocal
-            ,fromCall
-            ,fromSSID
-            ,toCall
-            ,toSSID
-            ,path
+            ,source
+            ,destination
+            ,digipeaters
+            ,information
             ,reportType
-            ,payload
             ,symbolTable
             ,symbolCharacter
             ,symbolOverlay
@@ -198,19 +221,16 @@ class SQLHandler:
             ,longitude
             ,elevation
             )
-            values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             """
-        vals=(  packet.utcTime
-                ,packet.aprsisString
+        vals=(  packet.receivedTime
                 ,packet.sourcePort
                 ,packet.heardLocal
-                ,packet.fromCall
-                ,packet.fromSSID
-                ,packet.toCall
-                ,packet.toSSID
-                ,packet.path
-                ,packet.payload.reportType
-                ,packet.payload.data
+                ,packet.source.__str__()
+                ,packet.destination.__str__()
+                ,packet.digipeaters.__str__()
+                ,packet.information
+                ,packet.dataType
                 ,packet.payload.symbolTable
                 ,packet.payload.symbolCharacter
                 ,packet.payload.symbolOverlay
@@ -231,16 +251,13 @@ class SQLHandler:
 
         sql="""create table Reports (
             receivedTime date not null
-            ,aprsisString text(200) not null
             ,sourcePort text(50)
-            ,heardLocal bit
-            ,fromCall text(10) not null
-            ,fromSSID text(2)
-            ,toCall text(10) not null
-            ,toSSID text(2)
-            ,path text (50) not null
+            ,heardLocal bool
+            ,source text(10) not null
+            ,destination text (10) not null
+            ,digipeaters text (60) not null
+            ,information text (100) not null
             ,reportType text (30) not null
-            ,payload text (100) not null
             ,symbolTable text(1)
             ,symbolCharacter text(1)
             ,symbolOverlay text(1)
@@ -249,20 +266,22 @@ class SQLHandler:
             ,elevation real
 
             ,constraint pk_Reports_reportId
-                primary key (fromCall,fromSSID,receivedTime,payload)
+                primary key (source,receivedTime,information)
             )
             """
         self.dbConn.execute(sql)
         sql="""
             create index idx_Reports_fromCall
-                on Reports (fromCall)
+                on Reports (source)
             """
         self.dbConn.execute(sql)
         sql="""
             create index idx_Reports_Positions
                 on Reports (
-                    fromCall,fromSSID
-                    ,latitude,longitude,elevation
+                    source
+                    ,latitude
+                    ,longitude
+                    ,elevation
                     )
             """
         self.dbConn.execute(sql)
@@ -275,9 +294,8 @@ class SQLHandler:
         #check to see if the packet is already in the system
         cur=self.dbConn.cursor()
         cur.execute("""select receivedTime,heardLocal from Reports
-            where fromCall=? and fromSSID=?
-                and payload=?
-            """,(packet.fromCall,packet.fromSSID,packet.payload.data)
+            where source=? and information=?
+            """,(packet.source.__str__(),packet.information)
             )
         storedReport=cur.fetchone()
 
@@ -286,20 +304,20 @@ class SQLHandler:
         if storedReport:
             td=datetime.datetime.utcnow()-datetime.datetime.fromtimestamp(storedReport[0])
 
-            #duplicate but dupe time has expired
             s=td.days*24*60*60 + td.seconds
             if s>=self.dupeSeconds:
-                print 'Dupe (time ellapsed): %d - %s' % (s,packet.aprsisString)
+                #duplicate but dupe time has expired
+                print 'Dupe (time ellapsed): %d - %s' % (s,packet.__str__())
                 self.__insertReport(packet)
             else:
                 if storedReport[1]:
-                    print 'Dupe (previous local): %s' % packet.aprsisString
+                    print 'Dupe (previous local): %s' % packet.__str__()
                     return
                 elif packet.heardLocal:
-                    print 'Dupe (local): %s' % packet.aprsisString
+                    print 'Dupe (local): %s' % packet.__str__()
                     self.__replaceReport(packet)
                 else:
-                    print 'Dupe (ignored): %s' % packet.aprsisString
+                    print 'Dupe (ignored): %s' % packet.__str__()
         else:
             self.__insertReport(packet)
 

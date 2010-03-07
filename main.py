@@ -57,6 +57,7 @@ class Main:
         for monitor in self.monitors:
             ## for each monitor add producers
             for name,config in configProducers.items():
+                print name
                 my_logger.debug('Add producer %s to monitor - %s' % (name,monitor.name))
                 try:
                     p=__import__(config.plugin)

@@ -1,6 +1,5 @@
-import time
 import BaseHTTPServer
-import datetime
+import time,datetime,math
 from sqlite3 import dbapi2 as dba
 
 from aprspacket import BasicPacket
@@ -12,7 +11,7 @@ def adapt_datetime(ts):
 dba.register_adapter(datetime.datetime, adapt_datetime)
 
 HOST_NAME = ''
-PORT_NUMBER = 8000
+PORT_NUMBER = 8080
 
 HEAD="""<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -53,7 +52,7 @@ BODY="""    <Placemark>
     </Placemark>
 """
 
-class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
+class KmlRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     def do_GET(s):
         #print s.headers
         #print s.path
@@ -111,6 +110,21 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
             #s.wfile.write("<body><p>bbox=(%.4f,%.4f,%.4f,%.4f)</p>" % (bbox[0],bbox[1],bbox[2],bbox[3]))
             #s.wfile.write("</body></html>")
 
+def greatCircleDistance(pnt1,pnt2):
+    """
+    returns distance in miles between two points in d.dd
+    http://code.activestate.com/recipes/393241/
+    """
+    lon1,lat1=map(math.radians,pnt1)
+    lon2,lat2=map(math.radians,pnt2)
+
+    dlong = lon2-lon1
+    dlat = lat2 - lat1
+    a = (math.sin(dlat / 2))**2 + math.cos(lat1) * math.cos(lat2) * (math.sin(dlong / 2))**2
+    c = 2 * math.asin(min(1, math.sqrt(a)))
+    dist = 3956 * c
+    return dist
+
 def getKml(bbox,maxAge=60*60):
     td=datetime.timedelta(seconds=maxAge)
     minTime=datetime.datetime.utcnow()-td
@@ -123,9 +137,6 @@ def getKml(bbox,maxAge=60*60):
                         ,sourcePort
                         ,heardLocal
                         ,fromCall
-                        ,fromSSID
-                        ,toCall
-                        ,toSSID
                         ,path
                         ,reportType
                         ,payload
@@ -145,6 +156,7 @@ def getKml(bbox,maxAge=60*60):
     kml=HEAD
     i=0
     stationReports={}
+    i=0
     for row in cur:
 ##        p={}
 ##        p['fromCall']=row[1]
@@ -162,13 +174,14 @@ def getKml(bbox,maxAge=60*60):
         p=BasicPacket()
         p.fromDbRow(row)
         call=p.fromCall
-        if p.fromSSID!='': call+=p.fromSSID
-        if not stationReports.has_key(call):
+        if not stationReports.has_key(i):
             stationReports[call]=[]
+
         stationReports[call].append(p)
+        i+=1
 
     stations={}
-    for station,reports in stationReports.items():
+    for call,reports in stationReports.items():
         current=reports[0]
         tracks={}
         for report in reports:
@@ -179,14 +192,15 @@ def getKml(bbox,maxAge=60*60):
                     ,report.payload.latitude
                     ,report.payload.elevation)
 
+        #sort the previous locations and string them together
         keys=tracks.keys()
         keys.sort()
         trackString=' '.join([tracks[k] for k in keys])
 
-        stations[station]=(current,trackString)
+        stations[call]=(current,trackString)
 
-
-    for station,values in stations.items():
+    i=0
+    for call,values in stations.items():
         try:
             p=values[0]
             k=KmlPacket(p)
@@ -196,7 +210,7 @@ def getKml(bbox,maxAge=60*60):
         except:
             print 'Error building placemark - %s' % values[0].aprsisString
             continue
-##        kml+=BODY % p
+
     kml+=TAIL
     print '%d Reports returned' % i
 
@@ -206,14 +220,33 @@ def getKml(bbox,maxAge=60*60):
     conn=None
     return kml
 
+class KmlServer(BaseHTTPServer.HTTPServer):
+    def __init__(self,hostName,hostPort,requestHandler):
+        self.hostName=hostName
+        self.hostPort=hostPort
+        self.requestHandler=requestHandler
+        BaseHTTPServer.HTTPServer.__init__(self,(self.hostName,self.hostPort), self.requestHandler)
+
+    def start(self):
+        print time.asctime(), "Server Starts - %s:%s" % (self.hostName,self.hostPort)
+        try:
+            self.serve_forever()
+        except KeyboardInterrupt:
+            pass
+
+    def stop(self):
+        self.server_close()
+        print time.asctime(), "Server Stops - %s:%s" % (self.hostName,self.hostPort)
 
 if __name__ == '__main__':
-    server_class = BaseHTTPServer.HTTPServer
-    httpd = server_class((HOST_NAME, PORT_NUMBER), MyHandler)
-    print time.asctime(), "Server Starts - %s:%s" % (HOST_NAME, PORT_NUMBER)
-    try:
-        httpd.serve_forever()
-    except KeyboardInterrupt:
-        pass
-    httpd.server_close()
-    print time.asctime(), "Server Stops - %s:%s" % (HOST_NAME, PORT_NUMBER)
+    server=KmlServer(HOST_NAME,PORT_NUMBER,KmlRequestHandler)
+    server.start()
+##    server_class = BaseHTTPServer.HTTPServer
+##    httpd = server_class((HOST_NAME, PORT_NUMBER), MyHandler)
+##    print time.asctime(), "Server Starts - %s:%s" % (HOST_NAME, PORT_NUMBER)
+##    try:
+##        httpd.serve_forever()
+##    except KeyboardInterrupt:
+##        pass
+##    httpd.server_close()
+##    print time.asctime(), "Server Stops - %s:%s" % (HOST_NAME, PORT_NUMBER)

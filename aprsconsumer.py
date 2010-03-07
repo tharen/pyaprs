@@ -16,6 +16,15 @@ exception=my_logger.exception
 
 class Consumer:
     def __init__(self,parameters,name,*args,**kwargs):
+        """
+        Consumer subclasses receive raw APRS data and turn it into 
+        functional objects.
+        
+        Args
+        ----
+        parameters - reference to the global parameters object
+        name - name given to the consumer
+        """
         #self.iniFile=iniFile
         self.parameters=parameters
         self.name=name
@@ -50,9 +59,11 @@ class Consumer:
             try:
                 flag,data=self.queueIn.get_nowait()
             except Queue.Empty:
+                #wait a while to avoid runaway
                 time.sleep(self.pollInterval)
                 continue
             except:
+                #log the exeception
                 exception('Consumer queue Error')
 
 
@@ -68,7 +79,9 @@ class Consumer:
 
     def consume(self,basicPacket):
         """
+        (Subclass this)
         Do something with packet data
+        
         """
         pass
 

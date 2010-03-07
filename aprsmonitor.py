@@ -8,7 +8,7 @@ Producers connect to various packet source streams.
         "FROM>PATH,IDENTS:APRS Data Payload"
 
 Consumers accept basic packet objects and further process them
-    - Consumers are expected to receive a BasicPacket instance.
+    - Consumers are expected to receive a AprsFrame instance.
 
 Each producer and consumer must provide a target method that will
     run in it's own thread.  Packets are exchanged via Queues.
@@ -25,7 +25,7 @@ from copy import copy
 
 from aprsconsumer import Consumer
 from parameters import Parameters
-from aprspacket import BasicPacket
+#from aprspacket import AprsFrame
 
 # Reference the global logger
 my_logger = logging.getLogger('MyLogger')
@@ -44,7 +44,7 @@ class Main:
 
     def addConsumer(self,consumer):
         """
-        Add a consumer to accept BasicPackets
+        Add a consumer to accept AprsFrames
         """
         if self.consumers.has_key(consumer.name):
             raise "Consumer names must be unique"
@@ -52,7 +52,7 @@ class Main:
 
     def addProducer(self,producer):
         """
-        Add a producer to accept BasicPackets
+        Add a producer to accept AprsFrames
         """
 ##        thread=threading.Thread(target=producer.start)
 ##        thread.start()
@@ -61,6 +61,7 @@ class Main:
         self.producers[producer.name]=producer
 
     def mainLoop(self):
+        self.parameters.poll_interval
         for name,consumer in self.consumers.items():
             thread=threading.Thread(target=consumer.start)
             thread.start()
@@ -92,7 +93,7 @@ class Main:
 ##                et=time.time()
 
             # Wait x number of milliseconds
-            time.sleep(poll_interval/1000.0)
+            time.sleep(1) #poll_interval/1000.0)
 
         #clean up on exit
         try:
@@ -101,6 +102,7 @@ class Main:
             exception('**Error exiting mainLoop')
 
     def __pollProducers(self):
+        pc=0
         for name,producer in self.producers.items():
             try:
                 #get the next packet from each producer
@@ -121,12 +123,16 @@ class Main:
                 utcTime=datetime.datetime.utcnow()
                 #add the packet to the buffer
                 self.packetBuffer.append(packet)
+                pc+=1
+
                 producer.handledPackets+=1
+        print 'polled packets: %d' % pc
+            #producer.queueOut.clear()
 
     def __notifyConsumers(self,packet):
         for name,consumer in self.consumers.items():
             ##TODO: is copy necessary
-            #pass the BasicPacket to each consumer
+            #pass the AprsFrame to each consumer
             #(status,packet)
             consumer.queueIn.put(('ok',copy(packet)))
 

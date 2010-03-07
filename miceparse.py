@@ -43,22 +43,23 @@ MESSAGES={  'Standard':{
 
 def decodeMice(packet):
     debug('Parsing MIC')
-
+    ##TODO: how does mic handle ssid
+    destination=packet.destination.station
     # MIC type
-    if packet.payload.data[0] in ["\'","`","\x1c","\x1d"]:
-        packet.micType="MIC1" #MIC-E Packet
+    if packet.information[0] in ["\'","`","\x1c","\x1d"]:
+        packet.payload.micType="MIC1" #MIC-E Packet
     else:
-        packet.micType='Unknown'
+        packet.payload.micType='Unknown'
 
     # Is this a current report
-    packet.micCurrent=False
-    packet.micCurrent=packet.payload.data[0] in ('`','\x1c')
+    packet.payload.micCurrent=False
+    packet.payload.micCurrent=packet.information[0] in ('`','\x1c')
 
     #count the ambiguity characters
-    packet.ambiguity=len([c for c in packet.toCall if c in SPACEASCII])
+    packet.payload.ambiguity=len([c for c in destination if c in SPACEASCII])
 
     # Latitude
-    l=''.join([LAT_LOOKUP[c] for c in packet.toCall])
+    l=''.join([LAT_LOOKUP[c] for c in destination])
     d=int(l[:2])
     #overlay digits for abiguity
     #for every ambiguous space in the latitude decimal minutes
@@ -69,36 +70,36 @@ def decodeMice(packet):
     #convert to mm.mm
     mm=int(mm)/100.0
     #complete the latitude
-    packet.latitude=d+mm/60.0
+    packet.payload.latitude=d+mm/60.0
 
     # Convert N/S latitude
-    if packet.toCall[4] in DIGITS+'L': packet.latitude*=-1
+    if destination[4] in DIGITS+'L': packet.payload.latitude*=-1
 
     lonOffset=0
-    if packet.toCall[5] in HIGHASCII+'Z':lonOffset=100
+    if destination[5] in HIGHASCII+'Z':lonOffset=100
 
     lonDirection=1
-    if packet.toCall[5] in HIGHASCII+'Z':lonDirection=-1
+    if destination[5] in HIGHASCII+'Z':lonDirection=-1
 
     #message bits, type, lookup
     ## this ignores the 'unknown' message type in the spec
-    packet.messageType='Emergency'
+    packet.payload.messageType='Emergency'
     msgBits=[0,0,0]
     for i in range(3):
-        c=packet.toCall[i]
+        c=destination[i]
         if c in LOWASCII+'K':
             msgBits[i]=1
-            packet.messageType='Custom'
+            packet.payload.messageType='Custom'
         if c in HIGHASCII+'Z':
             msgBits[i]=1
-            packet.messageType='Standard'
-    packet.messageBits=tuple(msgBits)
-    packet.message=MESSAGES[packet.messageType][packet.messageBits]
+            packet.payload.messageType='Standard'
+    packet.payload.messageBits=tuple(msgBits)
+    packet.payload.message=MESSAGES[packet.payload.messageType][packet.payload.messageBits]
 
     ##TODO: destination SSID field
 
     #longitude
-    info=packet.payload.data[1:9]
+    info=packet.information[1:9]
     d=(ord(info[0])-28)+lonOffset
     if 180<=d<=189: d-=80
     elif 190<=d<=199: d-=190
@@ -112,15 +113,20 @@ def decodeMice(packet):
     ddm=d+m/60.0
     ddm*=lonDirection
 
-    packet.longitude=ddm
+    packet.payload.longitude=ddm
+
+    ##TODO: is this mic comment split right?
+    packet.payload.comment=''
+    if packet.payload.comment.find('}')>-1:
+        packet.payload.comment=packet.information.split('}')[1]
 
     ##TODO: finish
 
 if __name__=='__main__':
     import aprspacket
-    r="""WA7PIX-9>T6SQUU,KOPEAK*,WIDE2-1,qAR,AC7YY-12:`3Q2 {bk/]"4'}="""
-    packet=aprspacket.BasicPacket()
-    packet.fromAPRSIS(r)
-    decodeMice(packet)
+    r="""KE7NZA>T0TSWR-2,WIDE1-1,WIDE2-2,qAR,K2NWS-1:`'Ptl!\v/"B4}KE7NZA TinyTrak3"""
+    packet=aprspacket.AprsFrame()
+    packet.parseAprs(r)
+    #decodeMice(packet)
     print packet
-    print packet.latitude,packet.longitude
+    print packet.payload.latitude,packet.payload.longitude
